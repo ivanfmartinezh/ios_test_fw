@@ -1,0 +1,100 @@
+{
+   "targets": {
+      "ProtonMail": {
+         "type": "application",
+         "platform": "iOS",
+         "sources": [
+            "ProtonMail/Extension/Foundations/APP_share_push_siri",
+            "ProtonMail/Extension/Foundations/APP_share_siri",
+            "ProtonMail/Models/APP",
+            {
+               "path": "ProtonMail",
+               "includes": [
+                  "**/APP",
+                  "**/APP_share",
+                  "**/APP_share_push",
+                  "**/APP_share_push_siri",
+                  "**/APP_share_push_uiTest",
+                  "Generated",
+                  "Resource/Localization",
+                  "Siri/IntentHandler.swift",
+                  "Siri/Intents.intentdefinition"
+               ]
+            },
+            {
+               "path": "ProtonMail/Supporting Files/",
+               "excludes": [
+                  "**/*.plist",
+                  "**/*.entitlements",
+                  "**/*.md",
+                  "debug/SettingsEnvironment.bundle",
+                  "enterprise/SettingsEnvironment.bundle"
+               ]
+            }
+         ],
+         "dependencies": [
+            {
+               "sdk": "libc++.tbd"
+            },
+            {
+               "target": "ProtonMailAnalytics"
+            },
+            {
+               "target": "PushService",
+               "embed": true
+            },
+            {
+               "target": "Share",
+               "embed": true
+            },
+            {
+               "target": "Siri",
+               "embed": true
+            },
+            {
+               "sdk": "Social.framework"
+            },
+            {
+               "sdk": "StoreKit.framework"
+            },
+            {
+               "package": "LifetimeTracker"
+            }
+         ],
+         "postBuildScripts": [
+            {
+               "basedOnDependencyAnalysis": false,
+               "name": "Overwrite Settings.bundle for Debug",
+               "path": "xcodeGen/copySettingsEnvironmentBundle.sh"
+            },
+            {
+               "basedOnDependencyAnalysis": false,
+               "name": "SwiftLint",
+               "path": "xcodeGen/swiftlint_build_phase.sh"
+            }
+         ],
+         "configFiles": {
+            "Debug": "xcodeGen/xcconfig/ProtonMail-Debug.xcconfig",
+            "Release": "xcodeGen/xcconfig/ProtonMail-Release.xcconfig",
+            "Enterprise Debug": "xcodeGen/xcconfig/ProtonMail-EnterpriseDebug.xcconfig",
+            "Enterprise Release": "xcodeGen/xcconfig/ProtonMail-Enterprise.xcconfig"
+         },
+         "settings": {
+            "configs": {
+               "Debug": {
+                  "INFOPLIST_FILE": "ProtonMail/Supporting Files/Info.plist"
+               },
+               "Release": {
+                  "INFOPLIST_FILE": "ProtonMail/Supporting Files/Info.plist"
+               },
+               "Enterprise Debug": {
+                  "INFOPLIST_FILE": "ProtonMail/Supporting Files/InfoDev.plist"
+               },
+               "Enterprise Release": {
+                  "INFOPLIST_FILE": "ProtonMail/Supporting Files/InfoDev.plist"
+               }
+            }
+         }
+      }
+   }
+}

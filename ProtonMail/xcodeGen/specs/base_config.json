@@ -1,0 +1,43 @@
+{
+   "name": "ProtonMail",
+   "options": {
+      "createIntermediateGroups": true,
+      "deploymentTarget": {
+         "iOS": "14.7"
+      },
+      "postGenCommand": "xcodeGen/install_pods.sh"
+   },
+   "fileGroups": [
+      "ProtonMail",
+      "PushService",
+      "Share",
+      "Siri",
+      "ProtonMailTests",
+      "ProtonMailUITests"
+   ],
+   "configs": {
+      "Debug": "debug",
+      "Release": "release",
+      "Enterprise Debug": "debug",
+      "Enterprise Release": "release"
+   },
+   "packages": {
+      "LifetimeTracker": {
+         "url": "https://github.com/krzysztofzablocki/LifetimeTracker.git",
+         "version": "1.8.1"
+      },
+      "Difference": {
+         "url": "https://github.com/krzysztofzablocki/Difference.git",
+         "version": "1.0.2"
+      }
+   },
+   "configFiles": {
+      "Debug": "xcodeGen/xcconfig/Project-Debug.xcconfig",
+      "Release": "xcodeGen/xcconfig/Project-Release.xcconfig",
+      "Enterprise Debug": "xcodeGen/xcconfig/Project-EnterpriseDebug.xcconfig",
+      "Enterprise Release": "xcodeGen/xcconfig/Project-Enterprise.xcconfig"
+   },
+   "settings": {
+      "SWIFT_SUPPRESS_WARNINGS": "${SWIFT_SUPPRESS_WARNINGS}"
+   }
+}

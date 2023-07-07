@@ -1,0 +1,420 @@
+# See https://confluence.protontech.ch/pages/viewpage.action?pageId=121918293
+
+stages:
+  - i18n
+  - linting
+  - deploy
+  - build
+  - test
+  - report
+  - cleanup
+  - testflight
+  - enterprise
+  - distribute
+  - bot
+
+.setup_basic_tools: &setup_basic_tools
+  - brew bundle --file="$CI_PROJECT_DIR/ProtonMail/Brewfile" --no-upgrade
+  - mint bootstrap --link
+
+.setup_ruby: &setup_ruby
+  - cd ProtonMail
+  - bundle install
+  - cd ..
+
+.setup_project: &setup_project
+  - *setup_basic_tools
+  - *setup_ruby
+
+  - git submodule init
+  - git submodule update --init --recursive
+
+  - defaults write com.apple.iphonesimulator ConnectHardwareKeyboard 0 # Fixed UI tests failing on secure field
+
+  - cd ProtonMail
+  - sh xcodeGenHelper.sh
+  - cd ..
+
+.prepare_users_for_ui_tests: &prepare_users_for_ui_tests
+  - cd ProtonMail/ProtonMailUITests
+  - sh Tests/TestPlans/scripts/prepare_users.sh
+  - cd ../..
+
+.configure_sentry: &configure_sentry
+  - curl -sL https://sentry.io/get-cli/ | bash || true
+
+.build_for_testflight: &build_for_testflight
+  - cd ProtonMail
+  - *configure_sentry
+  - base64 -D -o Certificates.p12 <<< $DISTRIBUTION_CERTIFICATE
+  - bundle exec fastlane ios build
+
+.enterprise_config_setting: &enterprise_config_setting
+  - cd ProtonMail
+  - *configure_sentry
+  - base64 -D -o Certificates.p12 <<< $ENTERPRISE_DISTRIBUTION_CERTIFICATE
+  - base64 -D -o Siri.mobileprovision <<< $ENTERPRISE_DISTRIBUTION_SIRI_PROVISIONPROFILE
+  - base64 -D -o Enterprise.mobileprovision <<< $ENTERPRISE_DISTRIBUTION_APP_PROVISIONPROFILE
+  - base64 -D -o PushService.mobileprovision <<< $ENTERPRISE_DISTRIBUTION_PUSHSERVICE_PROVISIONPROFILE
+  - base64 -D -o Share.mobileprovision <<< $ENTERPRISE_DISTRIBUTION_SHARE_PROVISIONPROFILE
+
+# --- includes ---
+include:
+  - project: "translations/generator"
+    ref: master
+    file: "/jobs/sync-crowdin.gitlab-ci.yml"
+
+  - project: "translations/generator"
+    ref: master
+    file: "/jobs/commit-locales.gitlab-ci.yml"
+
+  - project: 'proton/devops/atlas-deploy'
+    file: '/scenarios/pipeline-env.yml'
+
+  - project: "tpe/testmo-reporter"
+    file: '/scenarios/testmo-script.yml'
+
+variables:
+  LANG: "en_US.UTF-8"
+  GEM_HOME: "$CI_PROJECT_DIR/gem"
+  ATLAS_DEPLOY_LIST: ""
+  ATLAS_LINK_APP: mail
+  ATLAS_DEPLOY_ENV: "true"
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: $CI_COMMIT_BRANCH == "develop"
+
+default:
+  cache:
+    key: "$CI_PROJECT_NAME"
+    paths:
+      - bundler-cache/
+
+linting:
+  stage: linting
+  before_script:
+    - *setup_basic_tools
+  script:
+    - pip3 install -r Scripts/requirements.txt
+    - python3 Scripts/linkAvailabilityCheck.py
+
+    - cd ProtonMail
+    - xcodeGen/swiftlint.sh
+  tags:
+    - iOS_ARM_TAIPEI
+
+test:unit:
+  dependencies: []
+  stage: test
+  coverage: '/Test Coverage: \d*.\d*%/'
+  only:
+    - master
+    - main
+    - develop
+    - /^release\/.*$/
+    - merge_requests
+  except:
+    - schedules
+  variables:
+    GIT_DEPTH: 1
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: test_output/slatherOutput/cobertura.xml
+    paths:
+      - test_output/Build/Products/Debug-iphonesimulator/ProtonMail.app
+      - test_output/slatherOutput/
+  before_script:
+    - *setup_project
+  script:
+    - cd ProtonMail
+    - bundle exec fastlane unit_test
+  tags:
+    - iOS_ARM_TAIPEI
+
+test:ui:smoke:
+  stage: test
+  except:
+    - schedules
+  only:
+    refs:
+      - master
+      - main
+      - develop
+      - /^release\/.*$/
+      - merge_requests
+  variables:
+    GIT_DEPTH: 1
+  artifacts:
+    when: always
+    name: "test-report"
+    paths:
+      - test_output/TestResults
+    expire_in: 10 days
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: test_output/slatherOutput/cobertura.xml
+      junit:
+        - test_output/TestResults/report.xml
+  before_script:
+    - *setup_project
+    - *prepare_users_for_ui_tests
+  script:
+    - cd ProtonMail
+    - bundle exec fastlane ui_test
+  tags:
+    - iOS_UITEST
+  allow_failure: true
+
+report:slack:smoke:
+  image: $CI_REGISTRY/tpe/test-scripts
+  stage: report
+  rules:
+    - if: "$CI_COMMIT_BRANCH"
+      when: never
+    - if: "$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS"
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+  script:
+    - test_reporter.py
+      --path test_output/TestResults/
+      --platform ios
+      --job-name ui_tests_smoke
+      --slack-channel mail-ios-uitests
+  allow_failure: true
+
+test:ui:feature:
+  stage: test
+  rules: 
+    - if: '$TEST_TYPE == "regression" || $TEST_TYPE == "feature"'
+  variables:
+    GIT_DEPTH: 1
+  artifacts:
+    when: always
+    name: "test-report"
+    paths:
+      - test_output/TestResults
+    expire_in: 10 days
+    reports:
+      junit: test_output/TestResults/report.xml
+  before_script:
+    - *setup_project
+    - *prepare_users_for_ui_tests
+    - bash <(curl -s https://raw.githubusercontent.com/TitouanVanBelle/XCTestHTMLReport/master/install.sh) '2.0.0'
+  script:
+    - cd ProtonMail
+    - bundle exec fastlane feature_tests
+  tags:
+    - iOS_UITEST
+
+test:ui:monkey:
+  timeout: 2 hours
+  stage: test
+  rules: 
+    - if: '$TEST_TYPE == "regression" || $TEST_TYPE == "monkey"'
+  artifacts:
+    when: always
+    name: "monkey-report"
+    paths:
+      - test_output/TestResults
+    expire_in: 10 days
+    reports:
+      junit: test_output/TestResults/report.xml
+  before_script:
+    - *setup_project
+    - *prepare_users_for_ui_tests
+  script:
+    - cd ProtonMail
+    - bundle exec fastlane monkey_tests
+  tags:
+    - iOS_UITEST
+
+report:slack:feature:
+  image: $CI_REGISTRY/tpe/test-scripts
+  stage: report
+  variables:
+    GIT_DEPTH: 1
+  rules:
+    - if: '$TEST_TYPE == "regression" || $TEST_TYPE == "feature"'
+      when: always
+  script:
+    - test_reporter.py
+      --path test_output/TestResults/
+      --platform ios
+      --job-name $TEST_PLAN
+      --slack-channel mail-ios-uitests
+  allow_failure: true
+
+report:slack:monkey:
+  image: $CI_REGISTRY/tpe/test-scripts
+  stage: report
+  rules:
+    - if: '$TEST_TYPE == "regression" || $TEST_TYPE == "monkey"'
+      when: always
+  script:
+    - test_reporter.py
+      --path test_output/TestResults/
+      --platform ios
+      --job-name Mail-iOS-Monkey-tests
+      --slack-channel mail-ios-uitests
+  allow_failure: true
+
+report:testmo:feature:
+  stage: report
+  extends: .testmo-upload
+  dependencies:
+    - test:ui:feature
+  rules:
+    - if: '$TEST_TYPE == "regression" || $TEST_TYPE == "feature"'
+      when: always
+  variables:
+    PROJECT_ID: "7"
+    NAME: "$TEST_PLAN"
+    MILESTONE: "nightly-automation"
+    TAGS: "$CI_COMMIT_REF_SLUG"
+    SOURCE: "ios"
+    RESULT_FOLDER: "./test_output/TestResults/*.xml"
+  allow_failure: true
+
+appetize:start:
+  dependencies: [test:unit]
+  stage: distribute
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    on_stop: appetize:stop
+    url: $APPETIZE_APP_URL?osVersion=16.2&device=iphone14
+  variables:
+    GIT_DEPTH: 1
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: manual
+      allow_failure: true
+  before_script:
+    - *setup_ruby
+  script:
+    - cd ProtonMail
+    - bundle exec fastlane upload_to_appetize
+  artifacts:
+    paths:
+      - appetize_public_key.txt
+    reports:
+      dotenv: deploy.env
+  tags:
+    - iOS_ARM_TAIPEI
+
+appetize:stop:
+  dependencies: []
+  stage: .post
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+  rules:
+    - when: manual
+      allow_failure: true
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - curl -X DELETE --fail https://$APPETIZE_API_TOKEN@api.appetize.io/v1/apps/$APPETIZE_PUBLIC_KEY
+  tags:
+    # anything that has `curl` basically, apparently without this tag, it's possible to get a runner that doesn't have it
+    - iOS_ARM_TAIPEI
+
+# --- Build app and send to testflight
+testflight:build:upload:
+  dependencies: []
+  stage: testflight
+  variables:
+    GIT_STRATEGY: clone
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: manual
+      allow_failure: true
+  artifacts:
+    name: "iOS mail app builds"
+    paths:
+      - ./ProtonMail/outputs/ProtonMail.app.dSYM.zip
+    expire_in: 90 days
+  before_script:
+    - *setup_project
+  script:
+    - *build_for_testflight
+    - ./fastlane/add_git_tag.sh
+  tags:
+    - iOS_BUILD
+
+# TODO: this is almost identical to testflight:build:upload:, perhaps we can combine them
+nightly-build-and-upload:
+  dependencies: []
+  stage: testflight
+  only:
+    refs:
+      - schedules
+    variables:
+      - $SCHEDULE_TYPE == "nightly_build"
+  artifacts:
+    name: "iOS mail app nightly build on develop branch"
+    paths:
+      - ./ProtonMail/outputs/ProtonMail.app.dSYM.zip
+    expire_in: 90 days
+  before_script:
+    - *setup_project
+  script:
+    - *build_for_testflight
+  tags:
+    - iOS_ARM_TAIPEI
+
+# --- Build enterprise app for test and upload
+enterprise:test:
+  dependencies: []
+  stage: enterprise
+  variables:
+    GIT_DEPTH: 1
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: manual
+      allow_failure: true
+  artifacts:
+    name: "iOS mail app test enterprise build"
+    paths:
+      - ./ProtonMail/outputs/ProtonMail.app.dSYM.zip
+    expire_in: 90 days
+  before_script:
+    - *setup_project
+  script:
+    - *enterprise_config_setting
+    - bundle exec fastlane ios enterprise usingTimeStamp:true
+  tags:
+    - iOS_ARM_TAIPEI
+
+# --- Translation related tasks ---
+i18n-sync-crowdin:
+  variables:
+    I18N_SYNC_CROWDIN_PROJECT: "apple-mail-v4"
+    I18N_SYNC_BRANCH: "develop"
+  extends: .i18n-sync-crowdin-shared-apple
+
+i18n-commit-locales:
+  variables:
+    I18N_COMMIT_CROWDIN_PROJECT: "apple-mail-v4"
+    I18N_COMMIT_BRANCH_PUSH: "develop"
+    I18N_COMMIT_BRANCH_ALLOWED: "develop"
+  extends: .i18n-commit-locales-shared-apple2
+
+commit-locales-release:
+  stage: i18n
+  extends: .i18n-commit-locales-shared-apple2
+  when: manual
+  variables:
+    I18N_COMMIT_BRANCH_PUSH: $CI_COMMIT_REF_NAME
+    I18N_COMMIT_CROWDIN_PROJECT: "apple-mail-v4"
+  only:
+    refs:
+      - branches
+    variables:
+      - $CI_COMMIT_REF_NAME == 'develop'

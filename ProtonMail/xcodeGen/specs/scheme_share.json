@@ -1,0 +1,30 @@
+{
+   "schemes": {
+      "Share": {
+         "build": {
+            "targets": {
+               "Share": "all",
+               "ProtonMail": "all"
+            }
+         },
+         "run": {
+            "config": "Debug",
+            "askForAppToLaunch": true
+         },
+         "test": {
+            "config": "Debug"
+         },
+         "profile": {
+            "config": "Release"
+         },
+         "analyze": {
+            "config": "Debug"
+         },
+         "archive": {
+            "config": "Release",
+            "customArchiveName": "Share",
+            "revealArchiveInOrganizer": true
+         }
+      }
+   }
+}

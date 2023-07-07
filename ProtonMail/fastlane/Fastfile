@@ -1,0 +1,424 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+require 'json'
+require 'net/http'
+
+default_platform(:ios)
+
+# Variable
+DEVELOPER_KEYCHAIN_NAME = "MAIL_IOS_CERTIFICATE_KEYCHAIN"
+DEVELOPER_KEYCHAIN_PASSWORD = "TUFJTF9JT1NfQ0VSVElGSUNBVEVfS0VZQ0hBSU4="
+CERTIFICATE_PATH = "Certificates.p12"
+API_KEY_DURATION = 1200 # seconds
+APP_IDENTIFIER = "ch.protonmail.protonmail"
+
+ENTERPRISE_SIRI_PATH = "Siri.mobileprovision"
+ENTERPRISE_PATH = "Enterprise.mobileprovision"
+ENTERPRISE_PUSH_SERVICE_PATH = "PushService.mobileprovision"
+ENTERPRISE_SHARE_PATH = "Share.mobileprovision"
+
+def set_up_keychain(isEnterprise)
+  create_keychain(
+      name: DEVELOPER_KEYCHAIN_NAME,
+      password: DEVELOPER_KEYCHAIN_PASSWORD,
+      default_keychain: false,
+      add_to_search_list: true,
+      unlock: true
+  )
+  if isEnterprise
+    import_certificate(
+      keychain_name: DEVELOPER_KEYCHAIN_NAME,
+      keychain_password: DEVELOPER_KEYCHAIN_PASSWORD,
+      certificate_path: CERTIFICATE_PATH,
+      certificate_password: ENV["ENTRIPRISE_DISTRIBUTION_CERTIFICATE_PASSWORD"]
+    )
+
+    install_provisioning_profile(path: ENTERPRISE_SIRI_PATH)
+    install_provisioning_profile(path: ENTERPRISE_PATH)
+    install_provisioning_profile(path: ENTERPRISE_PUSH_SERVICE_PATH)
+    install_provisioning_profile(path: ENTERPRISE_SHARE_PATH)
+  else
+    import_certificate(
+      keychain_name: DEVELOPER_KEYCHAIN_NAME,
+      keychain_password: DEVELOPER_KEYCHAIN_PASSWORD,
+      certificate_path: CERTIFICATE_PATH,
+      certificate_password: ENV["DISTRIBUTION_CERTIFICATE_PASSWORD"]
+    )
+  end
+end
+
+def tear_down_keychain
+  delete_keychain(
+      name: DEVELOPER_KEYCHAIN_NAME
+  )
+end
+
+def set_up_app_store_api_key
+  app_store_key_id = ENV["APPSTORE_API_KEY_ID"]
+  app_store_issuer_id = ENV["APPSTORE_API_KEY_ISSUER"]
+  app_store_key = ENV["APPSTORE_API_KEY"]
+
+  app_store_connect_api_key(
+    key_id: app_store_key_id,
+    issuer_id: app_store_issuer_id,
+    key_content: app_store_key,
+    duration: API_KEY_DURATION,
+    in_house: false
+  )
+end
+
+def get_xcode_profile(api_key)
+  ids = [
+    "ch.protonmail.protonmail",
+    "ch.protonmail.protonmail.Share",
+    "ch.protonmail.protonmail.PushService",
+    "ch.protonmail.protonmail.Siri"
+  ]
+
+  ids.each do |id|
+    get_provisioning_profile(
+      app_identifier: id,
+      api_key: api_key,
+      readonly: true,
+    )
+  end
+end
+
+def get_latest_build_number(api_key)
+  latest_testflight_build_number(
+    api_key: api_key,
+    app_identifier: APP_IDENTIFIER
+  )
+end
+
+def set_up_changelog(latest_build_number)
+  hash = sh("./get_commit_hash.sh #{latest_build_number}")
+  changelog_from_git_commits(
+    between: [hash.strip, "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
+    path: "../",
+    pretty: "%ad: %s",
+    date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+    match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+    merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+  )
+end
+
+def build_release_app
+  build_app(
+    scheme: "ProtonMail",
+    clean: true,
+    output_directory: "outputs/",
+    export_method: "app-store",
+    export_options: {
+        provisioningProfiles: {
+            "ch.protonmail.protonmail" => "ProtonMail Release",
+            "ch.protonmail.protonmail.Share" => "Protonmail share release",
+            "ch.protonmail.protonmail.PushService" => "protonmail push service release",
+            "ch.protonmail.protonmail.Siri" => "Protonmail Siri kit release"
+        }
+    }
+  )
+end
+
+def build_enterprise_app
+  build_app(
+    scheme: "Enterprise",
+    clean: true,
+    output_directory: "outputs/",
+    export_method: "enterprise",
+    export_options: {
+        provisioningProfiles: {
+            "com.protonmail.protonmail" => "ProtonMail Distribution",
+            "com.protonmail.protonmail.ShareDev" => "protonmail share Production",
+            "com.protonmail.protonmail.PushServiceDev" => "protonmail push service Production",
+            "com.protonmail.protonmail.SiriDev" => "production siriDev"
+        },
+        iCloudContainerEnvironment: "Production"
+    }
+  )
+end
+
+def copy_archive_to_builds
+  ENV["XCODEBUILD_ARCHIVE"] = lane_context[SharedValues::XCODEBUILD_ARCHIVE]
+  sh("./copy_archive_to_builds.sh")
+end
+
+def http_get_json(path)
+  response = http_get_raw(path)
+  return JSON.parse(response)
+end
+
+def http_get_raw(path)
+  ci_api_v4_url = ENV['CI_API_V4_URL']
+  uri = URI("#{ci_api_v4_url}/#{path}")
+  puts("GET #{uri}")
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  req = Net::HTTP::Get.new(uri)
+  req['PRIVATE-TOKEN'] = ENV['PRIVATE_TOKEN_GITLAB_API_PROTON_CI']
+  response = http.request(req)
+  if response.is_a?(Net::HTTPSuccess)
+    return response.body
+  else
+    puts("Invalid response: #{response.inspect()}")
+    puts(response.body)
+    exit(1)
+  end
+end
+
+def send_to_slack(success, changelog, exception, bundle_version)
+  version = get_version_number(xcodeproj: "ProtonMail.xcodeproj", target: "ProtonMail", configuration: "Debug")
+
+  pipeline = "https://gitlab.protontech.ch/ProtonMail/protonmail-ios/-/pipelines/#{ENV["CI_PIPELINE_ID"]}"
+  payload = success ? {"Changelog" => changelog} : {"Error" => exception}
+  payload.store("pipeline", pipeline)
+
+  message = ""
+  if success
+    message = "CI BOT: iOS mail app v#{version}(#{bundle_version})"
+  else
+    message = "CI BOT: iOS mail app build failed"
+  end
+
+  slack(
+    message: message,
+    channel: "@Anson Chen",
+    use_webhook_configured_username_and_icon: true,
+    slack_url: ENV["SLACK_CI_BOT_URL"],
+    payload: payload,
+    success: success
+  )
+end
+
+platform :ios do
+  desc "Upload the debug app to Appetize"
+  lane :upload_to_appetize do |options|
+    ci_commit_ref_name = ENV['CI_COMMIT_REF_NAME']
+    ci_project_dir = ENV["CI_PROJECT_DIR"]
+    ci_project_id = ENV['CI_PROJECT_ID']
+
+    # .app artifact from previous stages that will be uploaded
+    app_artifact_path = "#{ci_project_dir}/test_output/Build/Products/Debug-iphonesimulator/ProtonMail.app"
+
+    # Name of the artifact that stores the Appetize public key
+    # The point of storing it is to update the existing app in a given MR instead of uploading new copies when new commits are pushed.
+    appetize_public_key_file = "appetize_public_key.txt"
+
+    # This file will be used by the dynamic environment
+    deploy_env_path = "#{ci_project_dir}/deploy.env"
+
+    # The .app artifact will be zipped here
+    zipped_app_file = "ProtonMail.app.zip"
+
+    existing_environment = http_get_json("projects/#{ci_project_id}/environments?states=available&name=review/#{ci_commit_ref_name}").first
+
+    if existing_environment
+      existing_environment_id = existing_environment["id"]
+      existing_environment_details = http_get_json("projects/#{ci_project_id}/environments/#{existing_environment_id}")
+      last_deployment_job_id = existing_environment_details.dig("last_deployment", "deployable", "id")
+
+      if last_deployment_job_id
+        existing_appetize_public_key = http_get_raw("projects/#{ci_project_id}/jobs/#{last_deployment_job_id}/artifacts/#{appetize_public_key_file}").chomp
+      end
+    end
+
+    puts("Existing public key: #{existing_appetize_public_key}")
+
+    sh("zip -qr #{zipped_app_file} #{app_artifact_path}")
+
+    appetize(
+      api_token: ENV["APPETIZE_API_KEY"],
+      path: "fastlane/#{zipped_app_file}",
+      public_key: existing_appetize_public_key
+    )
+
+    appetize_app_url = lane_context[SharedValues::APPETIZE_APP_URL]
+    appetize_public_key = lane_context[SharedValues::APPETIZE_PUBLIC_KEY]
+
+    # This is to point the dynamic environment to the uploaded app
+    sh("echo APPETIZE_APP_URL=#{appetize_app_url} > #{deploy_env_path}")
+
+    # This is to pass the public key to the environment stop job, so that it can delete the uploaded app without performing the HTTP requests again
+    sh("echo APPETIZE_PUBLIC_KEY=#{appetize_public_key} >> #{deploy_env_path}")
+
+    # This is to expose the public key as an artifact to subsequent deployments
+    sh("echo #{appetize_public_key} > #{ci_project_dir}/#{appetize_public_key_file}")
+  end
+
+  desc "Build the app and upload to testflight"
+  lane :build do |options|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+    set_up_keychain(false)
+
+    api_key = set_up_app_store_api_key
+
+    # Download profile
+    get_xcode_profile(api_key)
+
+    # Collect change logs
+    latest_build_number = get_latest_build_number(api_key)
+    changelog = set_up_changelog(latest_build_number)
+
+    # Set build version by git log numbers
+    bundle_version = sh("./setup_bundle_version.sh")
+
+    build_release_app
+
+    begin
+      sentry_upload_dsym(
+        auth_token: ENV["SENTRY_AUTH_TOKEN"],
+        org_slug: ENV["SENTRY_ORG"],
+        project_slug: ENV["SENTRY_PROJECT"],
+        url: ENV["SENTRY_URL"]
+      )
+    rescue => ex
+      puts("Sentry upload error: #{ex}")
+    end
+
+    upload_to_testflight(
+      api_key: api_key,
+      team_name: "Proton Technologies AG",
+      skip_waiting_for_build_processing: true,
+      changelog: changelog
+    )
+
+    # Disable this since archive is too large.
+    # copy_archive_to_builds
+    tear_down_keychain
+
+    send_to_slack(true, changelog, "", bundle_version.strip)
+  end
+
+  desc "Build enterprise app"
+  lane :enterprise do |options|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+    set_up_keychain(true)
+
+    # Set build version by git log numbers
+    timeStamp = Time.now.getutc.to_i
+    bundle_version = sh("./setup_bundle_version.sh " + timeStamp.to_s)
+
+    build_enterprise_app
+
+    branchName = git_branch
+    lastGitCommitHash = last_git_commit[:commit_hash]
+    releaseNote = "Built on: " + git_branch + " \nBuild number: " + bundle_version + "\nGit commit: " + lastGitCommitHash
+
+    firebase_app_distribution(
+      app: "1:75309174866:ios:fb09e26e4130a105",
+      groups: "v4-internal-test-group",
+      release_notes: releaseNote
+    )
+
+    tear_down_keychain
+  end
+
+  %w{major minor patch}.each do |part|
+      lane "bump_#{part}".to_sym do
+        increment_version_number(bump_type: part)
+      end
+  end
+
+  desc "Run unit test and get test coverage"
+  lane :unit_test do |options|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+    run_tests(
+      device: "iPhone 8",
+      scheme: "ProtonMailTests",
+      app_identifier: APP_IDENTIFIER,
+      reset_simulator: true
+    )
+
+    slather(cobertura_xml: true)
+    slather(simple_output: true)
+  end
+
+  desc "Run ui test and get test coverage"
+  lane :ui_test do |options|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+
+    scan(
+      device: "iPhone 14",
+      reset_simulator: true,
+      parallel_testing: true,
+      concurrent_workers: 3,
+      scheme: "ProtonMailUITests",
+      testplan: "SmokeTests",
+      app_identifier: APP_IDENTIFIER,
+      output_directory: "../test_output/TestResults",
+      output_files: "report.xml",
+      result_bundle: true,
+      xcargs: "-quiet",
+    )
+
+    slather(cobertura_xml: true)
+    slather(simple_output: true)
+  end
+
+  desc "Run feature ui test and get test coverage"
+  lane :feature_tests do |options|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+
+    run_tests(
+      device: "iPhone 14",
+      reset_simulator: true,
+      parallel_testing: true,
+      concurrent_workers: ENV["NUMBER_OF_DEVICES"],
+      scheme: "ProtonMailUITests",
+      testplan: ENV["TEST_PLAN"],
+      app_identifier: APP_IDENTIFIER,
+      output_directory: "../test_output/TestResults",
+      output_files: "report.xml",
+      result_bundle: true
+    )
+  end
+
+  desc "Run Monkey tests"
+  lane :monkey_tests do |args|
+    xcodes(
+      version: '14.2',
+      select_for_current_build_only: true,
+    )
+
+     run_tests(
+      device: "iPhone 14",
+      reset_simulator: true,
+      concurrent_workers: ENV["NUMBER_OF_DEVICES"],
+      scheme: "ProtonMailUITests",
+      testplan: "MonkeyTests",
+      app_identifier: APP_IDENTIFIER,
+      output_directory: "../test_output/TestResults",
+      output_files: "report.xml",
+      result_bundle: true
+    )
+  end
+
+end

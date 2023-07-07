@@ -1,0 +1,2320 @@
+/* Text for the search info banner when indexing is stopped because of storage limit reached. */
+", will not be searched. To search within them, increase the %1$@" = ", non verrà cercato. Per cercare all'interno di questi, aumentare il %1$@";
+
+/* Button title to show full encrypted message body when decryption failed */
+"…[Show full message]" = "…[Mostra messaggio completo]";
+
+/* reply time template, e.g. On Fri, Jul 23, 2021 at 3:40 PM. E, M...yyyy is date formate */
+"'On' E, MMM d, yyyy 'at' %@" = "'Il' E, MMM d, yyyy 'alle' %@";
+
+/* Message for the alert to delete all downloaded messages. */
+"'Search message content' will be disabled. It can be enabled again from settings and all messages will have to be downloaded again." = "La ricerca del contenuto del messaggio verrà disabilitata. Può essere riabilitata dalle impostazioni e tutti i messaggi dovranno essere scaricati nuovamente.";
+
+/* The text combining size of index and storage limit */
+"%@ of %@" = "%1$@ di %2$@";
+
+/* Drag and drop zone for attachments */
+"+ Drop here to add as attachment" = "+ Trascina qui per aggiungere come allegato";
+
+/* Text for the estimated time label if less than one minute is remaining */
+"<1 minute remaining" = "< 1 minuto rimanente";
+
+/* The time label for message is about to be sent less in 1 minute in the list view. */
+"<1m" = "<1m";
+
+/* The title of banner that is shown after using swipe action to archive a message */
+"1 message moved to archive" = "1 messaggio spostato nell'archivio";
+
+/* The title of banner that is shown after using swipe action to spam a message */
+"1 Message moved to spam" = "1 messaggio spostato in spam";
+
+/* Placeholder */
+"8 to 21 characters long" = "Lungo da 8 a 21 caratteri";
+
+/* error message */
+"Access to this account is disabled due to non-payment. Please sign in through proton.me to pay your unpaid invoice." = "L'accesso a questo account è disabilitato a causa di un mancato pagamento. Per favore, accedi a proton.me per provvedere al pagamento della fattura scaduta.";
+
+/* Account manager title */
+"Account" = "Account";
+
+/* section title in settings */
+"Account settings" = "Impostazioni account";
+
+/* The title of toast message that is shown after the undo action is done */
+"Action reverted" = "Azione annullata";
+
+/* new contacts add Anniversary */
+"Add anniversary" = "Aggiungi anniversario";
+
+/* menu title
+   The voiceiver title of the add attachment button in the tool bar of composer */
+"Add attachment" = "Aggiungi allegato";
+
+/* new contacts add Birthday */
+"Add birthday" = "Aggiungi compleanno";
+
+/* The title of the button in the composer that will show the cc/bcc field when voiceover is on. */
+"Add CC and BCC" = "Aggiungi CC e CCN";
+
+/* The title for the view where user can manage emails in the contact group */
+"Add contacts" = "Aggiungi contatti";
+
+/* Action */
+"Add Folder" = "Aggiungi cartella";
+
+/* new contacts add Gender */
+"Add gender" = "Aggiungi sesso";
+
+/* add label action */
+"Add Label" = "Aggiungi etichetta";
+
+/* add new address action */
+"Add new address" = "Aggiungi nuovo indirizzo";
+
+/* new custom field action */
+"Add new custom field" = "Aggiungi nuovo campo personalizzato";
+
+/* new email action */
+"Add new email" = "Aggiungi nuova email";
+
+/* new field action */
+"Add new field" = "Aggiungi nuovo campo";
+
+/* new phone action */
+"Add new phone number" = "Aggiungi un nuovo numero di telefono";
+
+/* action */
+"Add new URL" = "Aggiungi nuovo URL";
+
+/* new contacts add Nickname */
+"Add nickname" = "Aggiungi nickname";
+
+/* new contacts add Organization */
+"Add organization" = "Aggiungi organizzazione";
+
+/* The button text for add profile picture */
+"Add photo" = "Aggiungi foto";
+
+/* mark message star */
+"Add Star" = "Aggiungi ai preferiti";
+
+/* new contacts add Title */
+"Add title" = "Aggiungi titolo";
+
+/* Title */
+"Add to contacts" = "Aggiungi ai contatti";
+
+/* default vcard types */
+"Address" = "Indirizzo";
+
+/* cell title in device settings */
+"Addresses" = "Indirizzi";
+
+/* Settings lock advanced settings section */
+"Advanced settings" = "Impostazioni avanzate";
+
+/* Title */
+"Alert" = "Avviso";
+
+/* Title */
+"All contacts are imported" = "Tutti i contatti sono stati importati";
+
+/* mail location title
+   menu title */
+"All Mail" = "Tutte le email";
+
+/* The status text of message history in downloaded messages if all messages are downloaded */
+"All your messages are downloaded" = "Tutti i tuoi messaggi vengono scaricati";
+
+/* network troubleshot cell title */
+"Allow alternative routing" = "Consenti routing alternativo";
+
+/* The text explaining what attachments in local storage is used for. */
+"Allows you to open previously opened attachments while offline." = "Consenti di aprire file precedentemente aperti mentre sei offline.";
+
+/* The text explaining what chached data is used for. */
+"Allows you to open previously read messages while offline." = "Ti consente di aprire messaggi precedentemente letti mentre sei offline.";
+
+/* The text explaining what downloaded messages in local storage is used for. */
+"Allows you to search within your messages. %1$@" = "Ti consente di cercare tra i tuoi messaggi. %1$@";
+
+/* Checkbox on Label as action sheet to  prompt if user wants to archive the conversation/message as well when applying one or more labels */
+"Also archive?" = "Vuoi anche archiviare?";
+
+/* cell title in app settings */
+"Alternative routing" = "Percorso alternativo";
+
+/* The title of always off option in dark mode setting */
+"Always off" = "Sempre spenta";
+
+/* The title of always on option in dark mode setting */
+"Always on" = "Sempre attiva";
+
+/* contacts talbe cell Anniversary title */
+"Anniversary" = "Anniversario";
+
+/* network troubleshot cell title */
+"Antivirus interference" = "Interferenza antivirus";
+
+/* Alert message when user tries to discard unsaved changes */
+"Any unsaved changes will be lost." = "Ogni modifica non salvata sarà persa.";
+
+/* when server not reachable */
+"API Server not reachable…" = "Server API non raggiungibile…";
+
+/* security title in settings */
+"App PIN" = "PIN app";
+
+/* security title in settings */
+"App PIN & Face ID" = "PIN app & Face ID";
+
+/* security title in settings */
+"App PIN & Touch ID" = "PIN app & Touch ID";
+
+/* section title in settings */
+"App settings" = "Impostazioni applicazione";
+
+/* The title of section inside the dark mode setting page */
+"Appearance" = "Aspetto";
+
+/* Settings lock AppKey description */
+"AppKey further protects your Proton information in case of elaborate attacks, such as an attacker cloning the contents of your device. %1$@" = "AppKey protegge ulteriormente le tue informazioni Proton in caso di attacchi elaborati, come un utente malintenzionato che clona il contenuto del tuo dispositivo. %1$@";
+
+/* Settings lock AppKey feature */
+"AppKey protection" = "Protezione AppKey";
+
+/* Apply action */
+"Apply" = "Applica";
+
+/* Title */
+"Apply Labels" = "Applica etichette";
+
+/* button title */
+"Apply Password" = "Applica Password";
+
+/* menu title
+   Push notification action to archive
+   The title of the archive action in action sheet */
+"Archive" = "Archivio";
+
+/* Push notification action archive */
+"Archive (verb)" = "Archivia";
+
+/* Message of message permanent deletion alert, singular */
+"Are you sure you want to delete permanently this message?" = "Sei sicuro di voler eliminare permanentemente questo messaggio?";
+
+/* Message of message permanent deletion alert, plural */
+"Are you sure you want to delete these %d messages permanently?" = "Sei sicuro di voler eliminare permanentemente questi %d messaggi?";
+
+/* Alert to confirm sign out when only one account signed in */
+"Are you sure you want to sign out %@?" = "Sei sicuro di voler uscire %@?";
+
+/* Alert to confirm sign out
+   Alert when sign out non-primary account from account manager */
+"Are you sure you want to sign out?" = "Sei sicuro di voler uscire?";
+
+/* One of the schedule time options */
+"As scheduled" = "Come programmato";
+
+/* At {time}, e.g.: At 19:00 */
+"At %@" = "Alle %@";
+
+/* incorrect email format error while sending */
+"At least one email address in the group could not be found" = "Non è stato possibile trovare almeno un indirizzo email nel gruppo";
+
+/* incorrect email format error while sending */
+"At least one email address in the group could not be found." = "Non è stato possibile trovare almeno un indirizzo email nel gruppo.";
+
+/* incorrect email format error in composer */
+"At least one recipient email address is improperly formatted, please double check them." = "Almeno un indirizzo email del destinatario non è nel formato corretto, si prega di ricontrollarlo.";
+
+/* incorrect email format error while sending */
+"At least one recipient email address/domain doesn't exist or is badly formatted. Message moved to drafts." = "Almeno un indirizzo e-mail/dominio del destinatario non esiste o è formattato male. Messaggio spostato in bozze.";
+
+/* No comment provided by engineer. */
+"attachment" = "allegato";
+
+/* Alert title when attachment upload failed */
+"Attachment failure" = "Errore dell'allegato";
+
+/* Drag and drop zone for attachments */
+"Attachment imported" = "Allegato importato";
+
+/* Alert title */
+"Attachment limit" = "Limite allegato";
+
+/* No comment provided by engineer. */
+"attachments" = "allegati";
+
+/* The title of attachments in local storage settings */
+"Attachments" = "Allegati";
+
+/* Title */
+"Authentication" = "Autenticazione";
+
+/* Title */
+"Auto Lock Time" = "Tempo di blocco automatico";
+
+/* settings general section title */
+"Auto-load embedded images" = "Carica automaticamente le immagini incorporate";
+
+/* settings general section title */
+"Auto-load remote content" = "Carica automaticamente il contenuto remoto";
+
+/* The title of the section header in the toolbar customize view. */
+"Available actions" = "Comandi disponibili";
+
+/* Example feedback */
+"Awful" = "Terribile";
+
+/* top left back button */
+"Back" = "Indietro";
+
+/* Error title */
+"Bad parameter" = "Parametro non valido";
+
+/* Error Description */
+"Bad parameter: %@" = "Parametro non valido: %@";
+
+/* Error Description */
+"Bad response" = "Risposta errata";
+
+/* Title */
+"Bcc" = "Ccn";
+
+/* message Bcc: feild */
+"Bcc:" = "Ccn:";
+
+/* contacts talbe cell Birthday title */
+"Birthday" = "Compleanno";
+
+/* Settings row */
+"Block email tracking" = "Blocca tracciamento email";
+
+/* Settings item to open blocked sender list */
+"Block list" = "Lista bloccati";
+
+/* Button to block a sender */
+"Block sender" = "Blocca mittente";
+
+/* Spotlight explanation of the feature */
+"Blocks senders from seeing if and when you opened the message" = "Impedisce ai mittenti di vedere se e quando hai aperto il messaggio";
+
+/* Onboarding content */
+"Breeze through threaded messages in conversation mode." = "Scorri velocemente i messaggi nei thread in modalità conversazione.";
+
+/* Title */
+"Bug Description" = "Descrizione bug";
+
+/* Title */
+"Bug Report Received" = "Segnalazione di bug ricevuta";
+
+/* The title of cached data in local storage settings */
+"Cached data" = "Dati memorizzati nella cache";
+
+/* Call the contact (button title text) */
+"Call contact" = "Chiama contatto";
+
+/* Error */
+"Can't copy the file" = "Impossibile copiare il file";
+
+/* update password error */
+"Can't create a SRP Client" = "Impossibile creare un Client SRP";
+
+/* update password error */
+"Can't create a SRP verifier!" = "Impossibile creare un verificatore SRP!";
+
+/* When quick look attachment but can't decrypt it! */
+"Can't decrypt this attachment!" = "Impossibile decifrare questo allegato!";
+
+/* The error message will be shown when the deletionn of the contact group through API failed */
+"Can't delete contact group through API" = "Non è possibile eliminare il gruppo di contatto tramite API";
+
+/* Description */
+"Can't find the value from the response body" = "Impossibile trovare il valore dal corpo della risposta";
+
+/* when quick look attachment but can't find the data */
+"Can't find this attachment!" = "Impossibile trovare questo allegato!";
+
+/* update password error = typo:Modulus */
+"Can't get a Modulus ID!" = "Impossibile ottenere un ID modulo!";
+
+/* update password error = typo:Modulus */
+"Can't get a Modulus!" = "Impossibile ottenere un modulo!";
+
+/* update password error */
+"Can't get user auth info" = "Impossibile ottenere le informazioni d'autenticazione dell'utente";
+
+/* Error */
+"Can't load the file" = "Impossibile caricare il file";
+
+/* Error */
+"Can't open the file" = "Impossibile aprire il file";
+
+/* The error message will be shown when the update of the contact group through API failed */
+"Can't update contact group through the API" = "Non è possibile aggiornare il gruppo di contatti tramite l'API";
+
+/* Button to cancel encrypted search
+   Cancel action
+   general cancel action
+   Title for the alert button to cancel delete all downloaded messages.
+   Title for the alert button to cancel disable content search. */
+"Cancel" = "Annulla";
+
+/* Action */
+"Cancel Check" = "Annulla il controllo";
+
+/* Title */
+"Canceling" = "Annullamento";
+
+/* Warning message */
+"Cannot empty folder right now." = "Impossibile svuotare ora la cartella.";
+
+/* message Cc: feild
+   Title */
+"Cc" = "CC";
+
+/* settings general section title */
+"Change account password" = "Cambia la password dell'account";
+
+/* Title */
+"Change default address to…" = "Modifica l'indirizzo predefinito con…";
+
+/* settings general section title */
+"Change mailbox password" = "Cambia la password della casella email";
+
+/* settings general section title
+   title */
+"Change password" = "Cambia la password";
+
+/* update password error title */
+"Change Password" = "Modifica della password";
+
+/* The title of change PIN code option in security settings */
+"Change PIN code" = "Modifica codice PIN";
+
+/* Title */
+"Change sender address to…" = "Modifica l'indirizzo del mittente con…";
+
+/* Text for status label when low battery */
+"Charge your device or resume manually." = "Carica il tuo dispositivo o riprendi manualmente.";
+
+/* Action */
+"Check Again" = "Controlla di nuovo";
+
+/* Proton is down description. */
+"Check Proton Status for our system status." = "Controlla lo Stato di Proton per lo stato del nostro sistema.";
+
+/* The title of the button in the composer that can select different sender address. */
+"Choose different sender address" = "Scegli un indirizzo mittente diverso";
+
+/* contact placeholder */
+"City" = "Città";
+
+/* The title of the button in local storage attachments
+   The title of the button in local storage cached data
+   The title of the button to clear the search index */
+"Clear" = "Elimina";
+
+/* cell title in device setting */
+"Clear local cache" = "Cancella la cache locale";
+
+/* Menu action to remove text formatting */
+"Clear Style" = "Rimuovi formattazione";
+
+/* general close action */
+"Close" = "Chiudi";
+
+/* The title of the button in the composer that will close the cc/bcc field when voiceover is on. */
+"Close CC and BCC" = "Chiudere CC e CCN";
+
+/* the message will show when closing a draft from the share extension */
+"Closing" = "Chiusura";
+
+/* The title of voice over action of collapsing the folder */
+"Collapse folder" = "Comprimi cartella";
+
+/* The title of button to collapse the expanded message in conversation view for VoiceOver. */
+"Collapse message" = "Comprimi messaggio";
+
+/* cell title in device settings
+   The title of combined contact in settings */
+"Combined contacts" = "Contatti combinati";
+
+/* Action
+   Springboard (3D Touch) shortcuts action */
+"Compose" = "Componi";
+
+/* An action title shows in ellipsis menu */
+"Compose message" = "Componi messaggio";
+
+/* Title */
+"Compose to" = "Comporre a";
+
+/* Action
+   The title of button of PIN code setup2 */
+"Confirm" = "Conferma";
+
+/* Title */
+"Confirm new mailbox password" = "Conferma della nuova password della casella email";
+
+/* Placeholder */
+"Confirm new password" = "Conferma la nuova password";
+
+/* Title */
+"Confirm new sign-in password" = "Conferma la nuova password di accesso";
+
+/* alert title */
+"Confirm phishing report" = "Conferma segnalazione di phishing";
+
+/* Title */
+"Confirmation" = "Conferma";
+
+/* Text for status label when no wifi is available */
+"Connect to WiFi or enable \"Download via mobile data\"." = "Connettiti al WiFi o abilita \"Scarica tramite dati mobili\".";
+
+/* Hint when users delete contact offline */
+"Contact deleted, will be synced when connection is available" = "Contatto eliminato, verrà sincronizzato quando la connessione sarà disponibile";
+
+/* Hint when users create / edit contact offline */
+"Contact saved, will be synced when connection is available" = "Contatto salvato, verrà sincronizzato quando la connessione sarà disponibile";
+
+/* No other solution description. */
+"Contact us directly through our support form, email (support@protonmail.zendesk.com), or Twitter." = "Contattaci attraverso il nostro modulo di supporto, email (support@protonmail.zendesk.com), o Twitter.";
+
+/* Action and title
+   menu title */
+"Contacts" = "Contatti";
+
+/* The title of the pop up when encrypted search is available. */
+"Content search available" = "Ricerca di contenuti disponibile";
+
+/* Action
+   The title of button of PIN code setup1 */
+"Continue" = "Continua";
+
+/* No comment provided by engineer. */
+"Conversation grouping" = "Raggruppamento conversazioni";
+
+/* No comment provided by engineer. */
+"Conversation mode" = "Modalità conversazione";
+
+/* The title of the conversation notice view shown in the conversation view. */
+"Conversations are optional" = "Le conversazioni sono facoltative";
+
+/* Title */
+"Copy" = "Copia";
+
+/* Title */
+"Copy address" = "Copia indirizzo";
+
+/* Title */
+"Copy name" = "Copia nome";
+
+/* Error message when open message failed */
+"Couldn't open the message, try again." = "Impossibile aprire il messaggio, riprova.";
+
+/* contact placeholder */
+"Country" = "Paese";
+
+/* top right action text */
+"Create" = "Crea";
+
+/* Alert title */
+"Creating folder not allowed" = "La creazione della cartella non è consentita";
+
+/* Alert title */
+"Creating label not allowed" = "La creazione dell'etichetta non è consentita";
+
+/* Placeholder */
+"Current password" = "Password attuale";
+
+/* No comment provided by engineer. */
+"Current Recovery Email" = "Email di Recupero Corrente";
+
+/* The text for current selection of the storage limit of encrypted search */
+"Current selection: " = "Selezione corrente: ";
+
+/* Title */
+"Current sign-in password" = "Password di accesso attuale";
+
+/* contacts default label type
+   Custom option for time config picker */
+"Custom" = "Personalizzato";
+
+/* The action title of the button on the toolbar customization spotlight view. (verb) */
+"Customize (verb)" = "Personalizza";
+
+/* The title of the item in the App settings section of the device setting view. */
+"Customize toolbar" = "Personalizza toolbar";
+
+/* Title */
+"Cut" = "Taglia";
+
+/* cell title in app setting */
+"Dark mode" = "Modalità scura";
+
+/* message Date: text */
+"Date:" = "Data:";
+
+/* like Date: 2017-10-10 */
+"Date: %@" = "Data: %@";
+
+/* days */
+"days" = "giorni";
+
+/* error title */
+"Decryption error" = "Errore di decriptazione";
+
+/* error details */
+"Decryption of this content failed" = "Decifratura di questo contenuto fallita";
+
+/* error details */
+"Decryption of this message's encrypted content failed." = "La decifratura del contenuto cifrato nel messaggio è fallita.";
+
+/* Title */
+"Default" = "Predefinito";
+
+/* Settings row */
+"Default browser" = "Browser predefinito";
+
+/* Placeholder */
+"Define Hint (Optional)" = "Definisci suggerimento (opzionale)";
+
+/* general delete action
+   The title of the delete action in action sheet
+   Title for the alert button to delete all downloaded messages. */
+"Delete" = "Elimina";
+
+/* Title of message permanent deletion alert, plural */
+"Delete %d Messages" = "Elimina %d Messaggi";
+
+/* Title for the alert to delete all downloaded messages. */
+"Delete all downloaded messages?" = "Eliminare tutti i messaggi scaricati?";
+
+/* Title-Contacts */
+"Delete contact" = "Elimina contatto";
+
+/* The description of the button for deleting the contact group */
+"Delete contact group" = "Elimina gruppo di contatti";
+
+/* The title of delete folder button */
+"Delete folder" = "Elimina cartella";
+
+/* The title of delete label button */
+"Delete label" = "Eliminazione etichetta";
+
+/* Title of message permanent deletion alert, singular */
+"Delete message" = "Elimina messaggio";
+
+/* Title */
+"Details" = "Dettagli";
+
+/* Firewall interference description. */
+"Disable any proxies or firewalls, or contact your network administrator." = "Disabilita proxy o firewall, o contatta l'amministratore di rete.";
+
+/* Cert pinning failed alert message */
+"Disable Validation" = "Disabilita Validazione";
+
+/* Action
+   The text for downloaded messages in local storage when encrypted search is disabled. */
+"Disabled" = "Disabilitato";
+
+/* Message for the alert to disable content search. */
+"Disabling the feature now will delete the messages that have already been downloaded." = "Disabilitare le funzionalità ora eliminerà i messaggi che sono già stati scaricati.";
+
+/* Action */
+"Discard" = "Elimina";
+
+/* Action */
+"Discard changes" = "Annulla modifiche";
+
+/* Message shown to user after discarding action is done */
+"Discarded" = "Rimosso";
+
+/* AppKey disclaimer title when turning on */
+"Disclaimer" = "Esonero di responsabilità";
+
+/* The voiceover title of the dismiss keyboard action */
+"Dismiss keyboard" = "Ignora la tastiera";
+
+/* Title in settings */
+"Display Name" = "Nome visualizzato";
+
+/* No comment provided by engineer. */
+"Do you really want to remove this file from attachments?" = "Sei sicuro di voler rimuovere questo file dagli allegati?";
+
+/* Description */
+"Do you want to cancel the process?" = "Vuoi annullare l'operazione?";
+
+/* Warning message */
+"Do you want to discard the changes?" = "Vuoi scartare le modifiche?";
+
+/* No comment provided by engineer. */
+"Do you want to discard your changes?" = "Vuoi scartare le tue modifiche?";
+
+/* Alert body for no attachment found */
+"Do you want to send your message anyway?" = "Desideri comunque pubblicare il messaggio?";
+
+/* Action */
+"Don't remind me again" = "Non ricordarmelo più";
+
+/* Title */
+"Don't Show Again" = "Non visualizzare più";
+
+/* Done action */
+"Done" = "Fatto";
+
+/* Text for status label when pause button is pressed */
+"Download paused" = "Download in pausa";
+
+/* Text for estimate time label when low battery */
+"Download paused: Low battery" = "Download in pausa: Batteria bassa";
+
+/* Text for estimate time label when no internet connection is available */
+"Download paused: No connectivity" = "Download in pausa: Nessuna connessione";
+
+/* Text for estimate time label when no wifi is available */
+"Download paused: No WiFi detected" = "Download in pausa: WiFi non trovato";
+
+/* Text for estimate time label when storage is full */
+"Download paused: Storage full" = "Download in pausa: Memoria piena";
+
+/* The title of downloaded messages in settings */
+"Download progress" = "Avanzamento Download";
+
+/* The title of the slider for download via mobile data in settings */
+"Download via mobile data" = "Download tramite dati mobili";
+
+/* cell title in device settings
+   The title of downloaded messages in local storage settings
+   The title of downloaded messages in settings */
+"Downloaded messages" = "Messaggi scaricati";
+
+/* Title for the alert to disable content search. */
+"Downloaded messages will be deleted" = "I messaggi scaricati verranno eliminati";
+
+/* The text for the number of downloaded messages. */
+"Downloading message %1d out of %2d" = "Scaricamento del messaggio %1$d di %2$d";
+
+/* The text when metadata indexing is in progress. */
+"Downloading metadata ..." = "Download dei metadata ...";
+
+/* The footer of encrypted search in settings */
+"Downloads emails so you can search within them. Messages are encrypted and stored locally. %1$@" = "Download delle email così puoi cercare al loro interno. I messaggi sono criptati e salvati in locale. %1$@";
+
+/* Action */
+"Draft" = "Bozza";
+
+/* title of toast message that user taps the message which is uploading */
+"Draft is still uploading…" = "La bozza sta ancora caricando…";
+
+/* hint message */
+"Draft saved" = "Bozza salvata";
+
+/* menu title */
+"Drafts" = "Bozze";
+
+/* Onboarding title */
+"Easily up-to-date" = "Aggiornato facilmente";
+
+/* Action
+   The button title of the scheduled message banner. */
+"Edit" = "Modifica";
+
+/* The title for the view where user can select the color for the group */
+"Edit avatar" = "Modifica avatar";
+
+/* Contacts Edit contact */
+"Edit Contact" = "Modifica contatto";
+
+/* The title of edit folder page */
+"Edit folder" = "Modifica cartella";
+
+/* The title for the contact group editing view */
+"Edit group" = "Modifica gruppo";
+
+/* The title of edit label page */
+"Edit label" = "Modifica etichetta";
+
+/* The button text for edit profile picture */
+"Edit photo" = "Modifica foto";
+
+/* default vcard types */
+"Email" = "Email";
+
+/* contact placeholder */
+"Email address" = "Indirizzo email";
+
+/* The error message while calculating the encryption preferences */
+"Email address disabled" = "Indirizzo email disabilitato";
+
+/* contact detail view, email addresses section title */
+"Email addresses" = "Indirizzi email";
+
+/* Send an email to the current contact (button title text) */
+"Email contact" = "Contatto email";
+
+/* Description */
+"Email failed to send. Message saved as draft." = "Invio email non riuscito. Il messaggio è stato salvato come bozza.";
+
+/* Tracker protection feature explanation */
+"Email trackers can violate your privacy." = "I tracker nelle email possono violare la tua privacy.";
+
+/* Name of the feature */
+"Email tracking protection" = "Protezione dal tracciamento email";
+
+/* An action title shows in ellipsis menu */
+"Empty Spam" = "Svuota Spam";
+
+/* Alert title */
+"Empty spam folder" = "Svuota cartella di spam";
+
+/* An action title shows in ellipsis menu */
+"Empty Trash" = "Svuota Cestino";
+
+/* Alert title */
+"Empty trash folder" = "Svuota cartella del cestino";
+
+/* Button to enable encrypted search
+   The title of the button to move to settings and enable encrypted search. */
+"Enable" = "Abilita";
+
+/* Title for the alert to enable encrypted search */
+"Enable content search" = "Abilita la ricerca di contenuti";
+
+/* Title */
+"Enable email notices" = "Abilita gli avvisi email";
+
+/* Title */
+"Enable signature" = "Abilita la firma";
+
+/* The footer shown when there is not result in the inbox */
+"Encrypted by Proton" = "Crittografato da Proton";
+
+/* contact section title */
+"Encrypted contact details" = "Dettagli di contatto cifrati";
+
+/* The message after tapping the encryption icon of recipient in composer. */
+"End-to-end encrypted" = "Crittografato end-to-end";
+
+/* The message after tapping the encryption icon of message received. */
+"End-to-end encrypted and signed message" = "Messaggio crittografato e firmato end-to-end";
+
+/* encryption lock description */
+"End-to-end encrypted message" = "Messaggio crittografato end-to-end";
+
+/* The message after tapping the encryption icon of message received. */
+"End-to-end encrypted message from verified sender" = "Messaggio crittografato end-to-end dal mittente verificato";
+
+/* The message after tapping the encryption icon of recipient in composer. */
+"End-to-end encrypted to verified recipient" = "Crittografato end-to-end al destinatario verificato";
+
+/* Action in 2fa popup view */
+"Enter" = "Inserisci";
+
+/* The assistive text of textfield of PIN code setup1 */
+"Enter a PIN code with min 4 characters and max 21 characters." = "Inserisci un codice PIN con minimo 4 caratteri e massimo 21 caratteri.";
+
+/* The title of textfield of PIN code setup1 */
+"Enter new PIN code" = "Inserisci il nuovo codice PIN";
+
+/* The content of the re auth alert */
+"Enter your password to make changes" = "Inserisci la tua password per apportare le modifiche";
+
+/* Title */
+"Enter your PIN to unlock your inbox." = "Immetta il PIN per sbloccare la sua casella email.";
+
+/* No comment provided by engineer. */
+"Enter your signature here" = "Inserisci qui la tua firma";
+
+/* Title of alert in share extension. */
+"Error" = "Errore";
+
+/* incorrect email format error in composer */
+"Error sending" = "Errore nell'invio";
+
+/* The default text while estimating the time remaining */
+"Estimating time remaining ..." = "Tempo rimanente stimato ...";
+
+/* lock app option */
+"Every time enter app" = "Ogni volta si apre l'applicazione";
+
+/* Text for the link in the banner when content search is slow. */
+"Exclude message content" = "Escludere il contenuto del messaggio";
+
+/* The title of voice over action of expanding the folder */
+"Expand folder" = "Espandi cartella";
+
+/* alert title */
+"Expiration not supported" = "Scadenza non supportata";
+
+/* Error message */
+"Failed to determine type of file" = "Fallito nel determinare il tipo di file";
+
+/* This is a generic error when the user uses share feature. It is like when you share files from Dropbox but cant read the file correctly */
+"Failed to load content!\nPlease try again." = "Impossibile caricare il contenuto!\nSei pregato di riprovare.";
+
+/* default vcard types */
+"Fax" = "Fax";
+
+/* Onboarding content */
+"File, label, and color code messages to create your perfect, custom inbox." = "File, etichetta e messaggi di codice del colore per creare la tua casella perfetta e personalizzata.";
+
+/* place holder */
+"Folder Name" = "Nome cartella";
+
+/* VoiceOver: email belongs to folders */
+"Folders" = "Cartelle";
+
+/* The title of follow system option in dark mode setting */
+"Follow device setting" = "Segui le impostazioni del dispositivo";
+
+/* The title of alert that the app is not having the permission to access photo library */
+"Forbidden" = "Proibito";
+
+/* forward action */
+"Forward" = "Inoltra";
+
+/* The action title in the action sheet of the forward action in conversation view. */
+"Forward (last message)" = "Inoltra (ultimo messaggio)";
+
+/* forwarded message title */
+"Forwarded message" = "Messaggio inoltrato";
+
+/* Text for status label when storage is full */
+"Free up at least 100 MB of storage to continue." = "Liberare almeno 100 MB di memoria per continuare.";
+
+/* Title */
+"From" = "Da";
+
+/* Title */
+"From your photo library" = "Dalla tua galleria fotografica";
+
+/* message From: field text */
+"From:" = "Da:";
+
+/* abbreviation of forward: */
+"Fw:" = "I:";
+
+/* contacts talbe cell gender title */
+"Gender" = "Sesso";
+
+/* section title in settings */
+"General settings" = "Impostazioni generali";
+
+/* title of the next button */
+"Get Started" = "Inizia";
+
+/* The title of the button to cancel the action of opening the link in spam mail. */
+"Go back (recommended)" = "Torna indietro (consigliato)";
+
+/* title of alert acton of incorrect email format error */
+"Go to drafts" = "Vai alle bozze";
+
+/* Alert when user enabled FaceID in app settings but restricted the use of FaceID in device settings */
+"Go to settings" = "Vai alle impostazioni";
+
+/* Got it action */
+"Got it" = "Capito";
+
+/* network troubleshot cell title */
+"Government block" = "Blocco di governo";
+
+/* No comment provided by engineer. */
+"Group emails from the same conversation together." = "Raggruppare le email provenienti dalla medesima conversazione.";
+
+/* The instruction label for the group name textfield */
+"Group name" = "Nome del gruppo";
+
+/* menu title (contact groups) */
+"Groups" = "Gruppi";
+
+/* Action */
+"Hide" = "Nascondi";
+
+/* Title */
+"Hide details" = "Nascondi i dettagli";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Hide My Email aliases" = "Alias Hide My Email";
+
+/* Prompt of user feedback view */
+"How would you describe your experience with the new Proton Mail?" = "Come vorresti descrivere la tua esperienza con il nuovo Proton Mail?";
+
+/* Description */
+"Human Check Failed" = "Controllo umano non riuscito";
+
+/* human check warning title */
+"Human Check Warning" = "Avviso di controllo umano";
+
+/* The content that is shared through the action: `Share the link` */
+"I’ve been using Proton Mail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free:" = "Sto usando Proton Mail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con questo link per ottenere 1 mese di funzioni premium gratis:";
+
+/* The footer of the slider for download via mobile data in settings */
+"If you lose your WiFi connection, download will continue over mobile data." = "Se perdi la connessione WiFi, i download continueranno usando i dati mobili.";
+
+/* The title of the button to open the link in spam mail. */
+"Ignore warning and continue" = "Ignora l'avviso e continua";
+
+/* Action */
+"Import Error" = "Errore di importazione";
+
+/* Title */
+"Import from…" = "Importa da…";
+
+/* Downloading attachments from cloud */
+"Importing" = "Importazione";
+
+/* Drag and drop zone for attachments */
+"Importing attachment, that can take a while" = "Importazione allegato, che può richiedere un po' di tempo";
+
+/* import contact title */
+"Importing Contacts" = "Importazione contatti";
+
+/* alternative routing description
+   The footer of alternative routing setting */
+"In case Proton sites are blocked, this setting allows the app to try alternative network routing to reach Proton, which can be useful for bypassing firewalls or network issues. We recommend keeping this setting on for greater reliability. %1$@" = "Nel caso in cui i siti Proton siano bloccati, questa impostazione consente all'app di provare l'instradamento di rete alternativo per raggiungere Proton, che può essere utile per aggirare i firewall o problemi di rete. Consigliamo di mantenere questa impostazione per una maggiore affidabilità. %1$@";
+
+/* One of schedule time options */
+"In the morning" = "La mattina";
+
+/* menu title */
+"Inbox" = "Posta in arrivo";
+
+/* Error */
+"Incorrect PIN." = "PIN errato.";
+
+/* The foot of downloaded messages in local storage settings */
+"Information about how much storage space this Proton Mail account is using on your device." = "Informazioni su quanto spazio di memoria sta utilizzando questo account Proton Mail sul tuo dispositivo.";
+
+/* Option title */
+"Inherit color from parent folder" = "Eredita il colore dalla cartella superiore";
+
+/* A label message */
+"Inherited from parent folder" = "Ereditato dalla cartella superiore";
+
+/* Title */
+"inline attachments" = "allegati in linea";
+
+/* place holder */
+"Input Display Name…" = "Inserisci Nome Mostrato…";
+
+/* Cert pinning failed alert title */
+"Insecure connection" = "Connessione non sicura";
+
+/* The preconditions are not met */
+"Internal Error" = "Errore Interno";
+
+/* default vcard types */
+"Internet" = "Internet";
+
+/* network troubleshot cell title */
+"Internet Service Provider (ISP) problem" = "Problema del provider Internet (ISP)";
+
+/* Welcome to rebranding content */
+"Introducing Proton’s refreshed look.\nMany services, one mission. Welcome to an Internet where privacy is the default." = "Ti presentiamo il nuovo look di Proton. \nMolti servizi, una sola missione. Benvenuto in un Internet dove la privacy è la regola.";
+
+/* update password error */
+"Invalid hashed password!" = "Password con hash non valido!";
+
+/* Invalid URL error when click a url in contact */
+"Invalid URL" = "URL non valido";
+
+/* Error message */
+"Invalid username!" = "Nome utente errato!";
+
+/* The article title of the referral share view. */
+"Invite friends to Proton,\n get up to $90 in credits!" = "Invita gli amici su Proton,\n ricevi fino a $90 in crediti!";
+
+/* Onboarding content */
+"Invite your contacts to Proton Mail to enjoy seamless end-to-end encryption, or add password protection to messages you send them." = "Invita i tuoi contatti su Proton Mail per usufruire della crittografia end-to-end senza interruzioni, oppure aggiungi la protezione con password ai messaggi che invii loro.";
+
+/* The article content of the referral share view. */
+"Invite your friends to Proton: they try Mail Plus for free, and you earn credits when they subscribe to a paid plan." = "Invita i tuoi amici ad usare Proton: potranno provare Mail Plus gratuitamente e tu riceverai dei crediti quando attiveranno un piano a pagamento.";
+
+/* Error message */
+"Is this bug report about an in-app purchase?" = "Questa segnalazione di bug riguarda un acquisto in-app?";
+
+/* No comment provided by engineer. */
+"Label as" = "Etichetta come";
+
+/* Title */
+"Label as…" = "Etichetta come…";
+
+/* createing lable input place holder */
+"Label Name" = "Nome Etichetta";
+
+/* VoiceOver: email has lables */
+"Labels" = "Etichette";
+
+/* cell title in device settings */
+"Language" = "Lingua";
+
+/* Action */
+"Later" = "Dopo";
+
+/* Action
+   alternative routing link name in description
+   The title of learn more link */
+"Learn more" = "Per saperne di più";
+
+/* The title of learn more link */
+"Learn more." = "Per saperne di più.";
+
+/* settings swipe actions section title */
+"Left to Right" = "Da sinistra a destra";
+
+/* The time label for message is about to be sent less in 1 minute not in the list view. */
+"less than 1 minute" = "meno di 1 minuto";
+
+/* Title of alert when the free account limit is reached */
+"Limit reached" = "Limite raggiunto";
+
+/* The banner title after tapping link copy button in referral share view. */
+"Link copied." = "Link copiato.";
+
+/* Button inside the banner */
+"Load" = "Carica";
+
+/* The title of loading embedded image banner. */
+"Load embedded images" = "Carica le immagini incorporate";
+
+/* Action
+   The title of loading remote content banner. */
+"Load remote content" = "Carica il contenuto remoto";
+
+/* No comment provided by engineer. */
+"Loading…" = "Caricamento…";
+
+/* The title of local storage in settings */
+"Local storage" = "Memoria locale";
+
+/* cell title in device settings */
+"Local storage limit" = "Limite di spazio locale";
+
+/* Text for the link to show when indexing is stopped because of storage limit reached. */
+"local storage limit." = "limite memoria locale.";
+
+/* menu title */
+"Lock The App" = "Blocca l'app";
+
+/* error title */
+"Logs" = "Registri";
+
+/* cell title in device settings */
+"Mailbox" = "Casella di posta";
+
+/* No comment provided by engineer. */
+"Manage" = "Gestisci";
+
+/* menu title */
+"Manage accounts" = "Gestisci account";
+
+/* The title for the view where user can manage emails in the contact group */
+"Manage addresses" = "Gestisci indirizzi";
+
+/* No comment provided by engineer. */
+"Mark as legitimate" = "Segna come legittimo";
+
+/* Push notification action mark as read
+   The title of the read action in action sheet */
+"Mark as read" = "Segna come letto";
+
+/* Action */
+"Mark as read/unread" = "Segna come letta/da leggere";
+
+/* The title of the unread action in action sheet */
+"Mark as unread" = "Segna come da leggere";
+
+/* menu title */
+"Menu" = "Menu";
+
+/* The title of the first item in the segment control of the Customize toolbar setting view. */
+"Message" = "Messaggio";
+
+/* No comment provided by engineer. */
+"Message actions" = "Azioni messaggio";
+
+/* Title of the view showing the message body */
+"Message body" = "Corpo del messaggio";
+
+/* message shown in the notification when the recipient validation is failed while sending */
+"Message could not be sent. At least one recipient email address/domain doesn't exist or is badly formatted." = "Il messaggio non può essere inviato. Almeno un indirizzo email/dominio del destinatario non esiste o è formattato male.";
+
+/* Text for the search info banner when indexing is paused. */
+"Message downloading paused. Find out how to %1$@" = "Download del messaggio in pausa. Scopri come %1$@";
+
+/* Composer expiration page title */
+"Message expiration" = "Scadenza del messaggio";
+
+/* No comment provided by engineer. */
+"Message expired" = "Messaggio scaduto";
+
+/* Title */
+"Message has been deleted." = "Il messaggio è stato eliminato.";
+
+/* Title */
+"Message has been moved." = "Il messaggio è stato spostato.";
+
+/* Title of the view showing the message header */
+"Message headers" = "Intestazioni del messaggio";
+
+/* The title of message history in settings for encrypted search */
+"Message history" = "Storia dei messaggi";
+
+/* The title of banner that is shown after using swipe action to trash a message */
+"Message moved to trash" = "Messaggio spostato nel cestino";
+
+/* Placeholder */
+"Message Password" = "Messaggio Password";
+
+/* Alert title */
+"Message saved to Drafts" = "Messaggio salvato nelle Bozze";
+
+/* Description */
+"Message sending failed. Please try again." = "L'invio del messaggio è fallito. Per favore riprova.";
+
+/* Description after message have been sent */
+"Message sent" = "Messaggio inviato";
+
+/* Text for the search info banner when indexing is ongoing. */
+"Messages are being downloaded for content search. Some results may not be shown. %1$@" = "I messaggi vengono scaricati per la ricerca dei contenuti. Alcuni risultati potrebbero non essere visualizzati. %1$@";
+
+/* Text for the search info banner when indexing is stopped because of storage limit reached. */
+"Messages from before " = "Messaggi da prima ";
+
+/* Text for the search info banner when indexing is stopped because of storage exceeded. */
+"Messages from before %@, will not be searched. To search within them, free up storage space on this device." = "I messaggi antecedenti a %@ non verranno sottoposti a ricerca. Per ricercare tra quelli, libera dello spazio di archiviazione da questo dispositivo.";
+
+/* Text for the alert to enable encrypted search */
+"Messages will download via WiFi. This could take some time and your device may heat up slightly. You can pause the action at any time." = "I messaggi verranno scaricati tramite WiFi. Questo può richiedere più tempo e il tuo dispositivo potrebbe surriscaldarsi leggermente. Puoi mettere in pausa l'azione in qualsiasi momento.";
+
+/* default vcard types */
+"Mobile" = "Mobile";
+
+/* Mobile Signature title in settings */
+"Mobile Signature" = "Firma Mobile";
+
+/* scheduled send message at next monday morning Action, e.g. Monday (Jan 27) at 08:15 */
+"Monday (%@) at 08:%02d" = "Lunedì (%1$@) alle 08:%2$d";
+
+/* More actions button */
+"More" = "Altro";
+
+/* No comment provided by engineer. */
+"Move message" = "Sposta messaggio";
+
+/* No comment provided by engineer. */
+"Move to" = "Sposta in";
+
+/* Action title of move to archive */
+"Move to archive" = "Sposta nell'archivio";
+
+/* The title of the remove action in action sheet */
+"Move to inbox" = "Sposta in posta in arrivo";
+
+/* Action title of move to spam
+   The title of the spam action in action sheet */
+"Move to spam" = "Sposta in spam";
+
+/* Push notification action move to trash
+   The title of the remove action in action sheet */
+"Move to trash" = "Sposta nel cestino";
+
+/* Title */
+"Move to…" = "Sposta in…";
+
+/* The title of the row inside the setting page of next msg after move function. */
+"Navigate to next message after move" = "Passa al messaggio successivo dopo lo spostamento";
+
+/* Onboarding title */
+"Neat and tidy" = "Pulito e ordinato";
+
+/* The title of alternative routing settings */
+"Networking" = "Reti";
+
+/* Contacts add new contact */
+"New contact" = "Nuovo contatto";
+
+/* The title of create folder page */
+"New folder" = "Nuova cartella";
+
+/* No comment provided by engineer. */
+"New Folder" = "Nuova Cartella";
+
+/* The title for the contact group creation view */
+"New group" = "Nuovo gruppo";
+
+/* The title of create label page */
+"New label" = "Nuova etichetta";
+
+/* No comment provided by engineer. */
+"New Label" = "Nuova Etichetta";
+
+/* Title */
+"New mailbox password" = "Nuova password della casella di posta";
+
+/* The title of the button that shows in the conversation view when there is new message coming. */
+"New Message" = "Nuovo messaggio";
+
+/* Placeholder */
+"New password" = "Nuova password";
+
+/* Title */
+"New sign-in password" = "Nuova password di accesso";
+
+/* title of the next button */
+"Next" = "Successiva";
+
+/* The title of the setting of the next msg after move */
+"Next message after move" = "Prossimo messaggio dopo lo spostamento";
+
+/* contacts talbe cell Nickname title */
+"Nickname" = "Soprannome";
+
+/* Alert title when users want to send a message without attachments but contain attachment-related keywords in the message body */
+"No attachment found" = "Nessun allegato trovato";
+
+/* Title */
+"No connectivity detected…" = "Nessuna connettività rilevata…";
+
+/* Short hint in the header view */
+"No email trackers found" = "Nessun tracker email trovato";
+
+/* network troubleshot cell title */
+"No internet connection" = "Nessuna connessione Internet";
+
+/* The error message while calculating the encryption preferences */
+"No keys retrieved for internal user" = "Nessuna chiave recuperata per l'utente interno";
+
+/* no object error, local only , this could be not translated! */
+"no object" = "nessun oggetto";
+
+/* Placeholder if message sender is empty */
+"No Recipient" = "Nessun Destinatario";
+
+/* zero messages matching search query */
+"No results found" = "Nessun risultato trovato";
+
+/* The error message while calculating the encryption preferences */
+"No valid keys retrieved for internal user" = "Nessuna chiave valida recuperata per l'utente interno";
+
+/* The error message while calculating the encryption preferences */
+"No WKD key retrieved for user is valid for sending" = "Nessuna chiave WKD recuperata per l'utente è valida per l'invio";
+
+/* Error message */
+"No, not related to in-app purchase" = "No, non correlato all'acquisto in-app";
+
+/* A *short* description saying that there is no contact group associated with this contact email
+   Action title of none
+   The protection title of None protection
+   Title */
+"None" = "Nessuno";
+
+/* Title */
+"normal attachments" = "allegati normali";
+
+/* No comment provided by engineer. */
+"Not a spam (move to inbox)" = "Non spam (sposta in posta in arrivo)";
+
+/* The status text of message history in downloaded messages if the device is out of memory. */
+"Not all messages were downloaded. To download them, free up storage on the device." = "Non tutti i messaggi sono stati scaricati. Per scaricarli, libera spazio sul dispositivo.";
+
+/* The status text of message history in downloaded messages if the storage limit is reached. */
+"Not all messages were downloaded. To download them, increase the storage limit below." = "Non tutti i messaggi sono stati scaricati. Per scaricarli, alza il limite di memoria qui sotto.";
+
+/* No comment provided by engineer. */
+"Not set" = "Non impostato";
+
+/* title */
+"Notes" = "Note";
+
+/* The title will be shown when foler doesnt have emails */
+"Nothing to see here" = "Niente da vedere qui";
+
+/* Alert title */
+"Notice" = "Avviso";
+
+/* AppKey disclaimer when turning on */
+"Notification actions and other background processes will become unavailable" = "Le azioni di notifica e altri processi in background non saranno disponibili";
+
+/* A option title that enable/disable notification feature
+   cell title in device settings */
+"Notifications" = "Notifiche";
+
+/* The title of Off setting options */
+"Off" = "Disattivo";
+
+/* Official badge next to sender's name */
+"Official" = "Ufficiale";
+
+/* Title of the alert when the device is offline */
+"Offline" = "Offline";
+
+/* Sending message when device doesn't have netowrk connection description */
+"Offline, message queued for sending" = "Offline, messaggio in attesa per l'invio";
+
+/* Action */
+"OK" = "OK";
+
+/* The text for determining the oldest message in the encrypted search index */
+"Oldest message: " = "Messaggi più vecchi: ";
+
+/* The title of On setting options */
+"On" = "Attivo";
+
+/* On {date}, e.g.: On Aug 14 */
+"On %@" = "Il %@";
+
+/* On {date} at {time}, e.g.: On Sat, Aug 14, 2021 at 19:00 */
+"On %@ at %@" = "Il %1$@ alle %2$@";
+
+/* Alert when the free account limit is reached */
+"Only one free account can be added" = "Può essere aggiunto solo un account gratuito";
+
+/* Open action */
+"Open" = "Apri";
+
+/* VoiceOver title of account switcher button in the menu */
+"Open account switcher" = "Apri il cambio account";
+
+/* contacts talbe cell Organization title */
+"Organization" = "Organizzazione";
+
+/* default vcard types */
+"Other" = "Altro";
+
+/* Error message */
+"Our Customer Support team will try to activate your service plan manually if you agree to attach technical data that App Store provided to the app at the moment of purchase. This data does not include any details about your iTunes account, Apple ID, linked payment cards, or any other user information. Technical data only helps us check and verify that the transaction was fulfilled on the App Store's servers." = "Il nostro team di assistenza clienti proverà ad attivare manualmente il tuo piano di servizio se accetti di allegare i dati tecnici che App Store ha fornito all'app al momento dell'acquisto. Questi dati non includono alcun dettaglio sul tuo account iTunes, ID Apple, carte di credito collegate o qualsiasi altra informazione sull'utente. I dati tecnici ci aiutano solo a controllare e verificare che la transazione sia stata eseguita sui server dell'App Store.";
+
+/* No comment provided by engineer. */
+"Our system flagged this message as a phishing attempt. Please check that it is legitimate." = "Il nostro sistema ha contrassegnato questo messaggio come un tentativo di phishing. Si prega di verificare che sia attendibile.";
+
+/* Setting option title of folder setting page */
+"Parent folder" = "Cartella principale";
+
+/* title */
+"Password Hint" = "Suggerimento password";
+
+/* update password error */
+"Password update failed" = "Aggiornamento della password non riuscito";
+
+/* Message to show to user after updating password. */
+"Password updated" = "Password aggiornata";
+
+/* Placeholder */
+"Passwords must match" = "Le password devono corrispondere";
+
+/* Text for pause button */
+"Pause" = "Pausa";
+
+/* The footer title of the setting row of the next msg after move functions. */
+"Performing a move action on a message (e.g. archive) will navigate to the next message." = "Lo spostamento di un messaggio (ad es. archivio) porterà al messaggio successivo.";
+
+/* default vcard types */
+"Personal" = "Personale";
+
+/* The message after tapping the encryption icon of recipient in composer. */
+"PGP-encrypted" = "Crittografato PGP";
+
+/* The message after tapping the encryption icon of message received. */
+"PGP-encrypted and signed message" = "Messaggio crittografato e firmato PGP";
+
+/* The message after tapping the encryption icon of message received. */
+"PGP-encrypted message" = "Messaggio PGP crittografato";
+
+/* The message after tapping the encryption icon of message received. */
+"PGP-encrypted message from verified sender" = "Messaggio crittografato PGP dal mittente verificato";
+
+/* The message after tapping the encryption icon of recipient in composer. */
+"PGP-encrypted to verified recipient" = "Crittografato PGP al destinatario verificato";
+
+/* The message after tapping the encryption icon of recipient in composer. */
+"PGP-signed" = "Firmato PGP";
+
+/* The message after tapping the encryption icon of message received. */
+"PGP-signed message from verified sender" = "Messaggio firmato PGP dal mittente verificato";
+
+/* The message after tapping the encryption icon of message received. */
+"PGP-signed message. Sender verification failed" = "Messaggio firmato PGP. Verifica del mittente fallita";
+
+/* default vcard types */
+"Phone" = "Telefono";
+
+/* contact placeholder */
+"Phone number" = "Numero di telefono";
+
+/* The protection title of PIN code protection */
+"PIN code" = "Codice PIN";
+
+/* Description */
+"PIN code can't be empty." = "Il codice PIN non può essere vuoto.";
+
+/* The error message of entering a long pin */
+"PIN is too long" = "Il PIN è troppo lungo";
+
+/* The error message of entering a short pin */
+"PIN is too short" = "Il PIN è troppo corto";
+
+/* Alert message is shown when the device doesn't have network connection */
+"Please connect and retry" = "Sei pregato di connetterti e riprovare";
+
+/* Text for status label when no internet connection is available */
+"Please connect to the internet to continue." = "Connettiti a internet per continuare, grazie.";
+
+/* error message */
+"Please input a valid email address." = "Per favore, inserisca un indirizzo email valido.";
+
+/* Alert message */
+"Please keep Proton Mail open until the operation is done." = "Mantieni Proton Mail aperto fino al termine dell'operazione.";
+
+/* no internet connection description */
+"Please make sure that your internet connection is working." = "Per favore assicurati che la connessione internet funzioni.";
+
+/* The message will show up when the user attempts to create a contact group without any name specified */
+"Please provide a group name" = "Si prega di fornire il nome del gruppo";
+
+/* The message will show up when the user attempts to apply label/folder in inbox without select any emails */
+"Please select at least one email" = "Selezionare almeno una email";
+
+/* The message will show up when the user attempts to create a contact group without any email selected */
+"Please select at least one email for the contact group" = "Per favore seleziona almeno un'email per il gruppo di contatti";
+
+/* No comment provided by engineer. */
+"Please set a recovery / notification email" = "Sei pregato di impostare un'email di recupero/notifica";
+
+/* The body of the email draft created in the network troubleshoot view. */
+"Please share your problem." = "Condividi il tuo problema.";
+
+/* Alert message */
+"Please upgrade to a paid plan to use more than 3 folders" = "Sei pregato di passare a un piano a pagamento per usare più di 3 cartelle";
+
+/* Alert message */
+"Please upgrade to a paid plan to use more than 3 labels" = "Sei pregato di passare a un piano di pagamento per usare più di 3 etichette";
+
+/* Content of storage full alert */
+"Please upgrade your plan" = "Sei pregato di aggiornare il tuo piano";
+
+/* Content of storage full alert */
+"Please upgrade your plan to continue to send and receive emails." = "Sei pregato di aggiornare il tuo piano per continuare a inviare e ricevere email.";
+
+/* Description */
+"Please use Proton Mail App sign-in first." = "Per favore, prima effettua la registrazione nell'app di Proton Mail.";
+
+/* No comment provided by engineer. */
+"Print" = "Stampa";
+
+/* cell title in device settings */
+"Privacy" = "Privacy";
+
+/* Onboarding title */
+"Privacy for all" = "Privacy per tutti";
+
+/* Local notification title */
+"Problem sending message" = "Problema nell'invio del messaggio";
+
+/* Settings lock protection section */
+"Protection" = "Protezione";
+
+/* network troubleshot cell title */
+"Proton is down" = "Proton è offline";
+
+/* Title */
+"Proton Mail is currently offline…" = "Proton Mail è correntemente offline…";
+
+/* The message about the app is not having the permission to access photo library */
+"Proton Mail needs photo library access in your device settings." = "Proton Mail necessita dell'accesso alla galleria nelle impostazioni del tuo dispositivo.";
+
+/* Name of the link of Proton Status */
+"Proton Status" = "Stato Proton";
+
+/* network troubleshot cell title */
+"Proxy/Firewall interference" = "Interferenza del Proxy/Firewall";
+
+/* The title of re auth alert */
+"Re-authenticate" = "Riautentica";
+
+/* abbreviation of reply: */
+"Re:" = "Ri:";
+
+/* No comment provided by engineer. */
+"Read" = "Letto";
+
+/* Title */
+"Reading device contacts data…" = "Leggendo i dati dei contatti del dispositivo…";
+
+/* A label text which is displayed after sending read receipt to sender */
+"Receipt sent" = "Ricevuta inviata";
+
+/* The error message is shown in composer */
+"Recipient not found" = "Destinatario non trovato";
+
+/* Title */
+"Recovery Code" = "Codice di recupero";
+
+/* Title */
+"Recovery email" = "Email di recupero";
+
+/* No comment provided by engineer. */
+"Recovery enabled" = "Recupero abilitato";
+
+/* menu title
+   The title of the refer button in referral prompt view. */
+"Refer a friend" = "Invita un amico";
+
+/* Title */
+"Remind Me Later" = "Ricordamelo più tardi";
+
+/* remove action */
+"Remove" = "Rimuovi";
+
+/* Settings row */
+"Remove image metadata" = "Rimuovi meta-dati dell'immagine";
+
+/* action title */
+"Remove password" = "Rimuovi password";
+
+/* The button to enable label list reorder */
+"Reorder" = "Riordina";
+
+/* textview title */
+"Repeat password" = "Ripeti la password";
+
+/* The title of PIN code setup2 view
+   The title of textfield of PIN code setup2 */
+"Repeat PIN code" = "Ripeti il codice PIN";
+
+/* reply action */
+"Reply" = "Rispondi";
+
+/* The action title in the action sheet of the reply action in conversation view. */
+"Reply (to last message)" = "Rispondi (all'ultimo messaggio)";
+
+/* reply all action */
+"Reply all" = "Rispondi a tutti";
+
+/* The action title in the action sheet of the reply action in conversation view. */
+"Reply all (to last message)" = "Rispondi a tutti (all'ultimo messaggio)";
+
+/* menu title */
+"Report a problem" = "Segnala un problema";
+
+/* No comment provided by engineer. */
+"Report phishing" = "Segnala phishing";
+
+/* alert message */
+"Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full." = "Segnalare un messaggio come tentativo di phishing ci invierà il messaggio, così che potremo analizzarlo e migliorare i nostri filtri. Questo significa che potremo vedere i contenuti del messaggio per intero.";
+
+/* link opeining confirmation */
+"Request link confirmation" = "Richiedi link di conferma";
+
+/* The title of the reset button in toolbar customization view. */
+"Reset to default" = "Reimposta al valore predefinito";
+
+/* The title of the alert after tapping reset in toolbar customization view. */
+"Reset to default?" = "Reimpostare al valore predefinito?";
+
+/* Title */
+"Resetting message cache…" = "Ripristino cache messaggi…";
+
+/* Text for resume button */
+"Resume" = "Riprendi";
+
+/* Text for the link to show when indexing is paused. */
+"resume manually." = "riprendi manualmente.";
+
+/* Action */
+"Retry" = "Riprova";
+
+/* settings swipe actions section title */
+"Right to Left" = "Da destra a sinistra";
+
+/* Title */
+"Save" = "Salva";
+
+/* No comment provided by engineer. */
+"Save as PDF" = "Salva come formato PDF";
+
+/* title */
+"Save Changes" = "Salva le modifiche";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Schedule messages at any time" = "Programma l'invio dei messaggi in qualunque momento";
+
+/* Action
+   The action title of the alert of the user trying to send a message that was schedule-send. */
+"Schedule send" = "Pianifica invio";
+
+/* The title of the alert that will be shown when user tries to delete a scheduled message. */
+"Schedule will be removed" = "La pianificazione sarà rimossa";
+
+/* mail location title */
+"Scheduled" = "Programmato";
+
+/* The title of the banner that will be shown when you schedule a message. */
+"Scheduling message..." = "Pianificazione messaggio...";
+
+/* Springboard (3D Touch) shortcuts action
+   Title */
+"Search" = "Cerca";
+
+/* cell title in device settings
+   The title of encrypted search in settings */
+"Search message content" = "Cerca il contenuto del messaggio";
+
+/* Text for the banner when content search is slow. */
+"Search taking too long? %1$@ from this search for faster results." = "La ricerca richiede troppo tempo? %1$@ da questa ricerca per risultati più veloci.";
+
+/* The link in local storage downloaded messages. */
+"See details" = "Vedi dettagli";
+
+/* Text for the link to show the current indexing progress */
+"See progress." = "Vedi i progressi.";
+
+/* section title */
+"Select colour" = "Seleziona colore";
+
+/* The title of navigation bar title of mailbox view while selecting the message */
+"Selected" = "Selezionato";
+
+/* Action */
+"Send" = "Invia";
+
+/* Action */
+"Send anyway" = "Invia comunque";
+
+/* Title of menu action to trigger feedback viewTitle of button to send feedback */
+"Send feedback" = "Invia il tuo feedback";
+
+/* The action title of the alert of the user trying to send a message that was schedule-send. */
+"Send immediately" = "Invia immediatamente";
+
+/* The alert title of the user trying to send a message that was schedule-send. */
+"Send immediately?" = "Inviare immediatamente?";
+
+/* Description */
+"Send message without subject?" = "Inviare il messaggio senza oggetto?";
+
+/* Title of the banner which is displayed when sender of the message requests a read receipt */
+"Send read receipt" = "Invia ricevuta di lettura";
+
+/* encryption lock description */
+"Sender Verification Failed" = "Verifica del mittente fallita";
+
+/* title of incorrect email format error while sending */
+"Sending failed" = "Invio non riuscito";
+
+/* Alert title */
+"Sending in progress" = "Invio in corso";
+
+/* Description */
+"Sending Message" = "Invio del messaggio";
+
+/* content of the sending mesage that will display this text on the date label */
+"Sending message…" = "Inviando il messaggio…";
+
+/* pm.me upgrade warning in composer */
+"Sending messages from %@ address is a paid feature. Your message will be sent from your default address %@" = "L'invio dei messaggi dall'indirizzo %1$@ è una funzionalità a pagamento. Il messaggio sarà inviato dal tuo indirizzo predefinito %2$@";
+
+/* text displayed in composer when attachments are uploading */
+"Sending will be available\nwhen attachments are uploaded" = "L'invio sarà disponibile\nquando vengono caricati gli allegati";
+
+/* menu title */
+"Sent" = "Inviata";
+
+/* The message after tapping the encryption icon. */
+"Sent by Proton Mail with zero-access encryption" = "Inviato da Proton Mail con la crittografia zero-access";
+
+/* The message after tapping the encryption icon. */
+"Sent by Proton Mail with zero-access encryption to verified recipient" = "Inviato da Proton Mail con crittografia ad accesso zero al destinatario verificato";
+
+/* The message after tapping the encryption icon. */
+"Sent by you with end-to-end encryption" = "Inviato da te con crittografia end-to-end";
+
+/* The message after tapping the encryption icon. */
+"Sent by you with end-to-end encryption to verified recipient" = "Inviato da te con crittografia end-to-end al destinatario verificato";
+
+/* Description */
+"Sent Failed" = "Invio non riuscito";
+
+/* Title */
+"Set" = "Imposta";
+
+/* Description */
+"Set a password to encrypt this message for non-Proton Mail users." = "Imposti una password per criptare questo messaggio per gli utenti non-Proton Mail.";
+
+/* The voiceiver title of the add expiration button in the tool bar of composer */
+"Set mail expiration" = "Imposta la scadenza della email";
+
+/* The voiceiver title of the add password button in the tool bar of composer. */
+"Set mail password" = "Imposta la password della email";
+
+/* Title */
+"Set Password" = "Impostazione password";
+
+/* The title of PIN code setup1 view */
+"Set PIN code" = "Imposta codice PIN";
+
+/* No comment provided by engineer. */
+"Set up swipe gestures to access most used actions." = "Configura i gesti di scorrimento per accedere alle azioni più usate.";
+
+/* The title of the up sell content of the scheduled send. */
+"Set your own schedule" = "Imposta la tua programmazione";
+
+/* menu title */
+"Settings" = "Impostazioni";
+
+/* The title of the share button in referral share view. */
+"Share" = "Condividi";
+
+/* action */
+"Share contact" = "Condividi il contatto";
+
+/* Action */
+"Show" = "Mostra";
+
+/* The button title of the conversation notice view shown in the conversation view. */
+"Show me" = "Fammi vedere";
+
+/* Alert title to confirm signout
+   menu title */
+"Sign out" = "Esci";
+
+/* Action */
+"Sign Out" = "Esci";
+
+/* Title in signature settings */
+"Signature" = "Firma";
+
+/* The text shown on the mailbox when the primary user changed */
+"Signed in as %@" = "Acceduto come %@";
+
+/* Alert when auth token is revoked and switch to another */
+"Signed out from %@ and signed in with %@" = "Disconnesso da %1$@ e connesso con %2$@";
+
+/* skip button title in onboarding page */
+"Skip" = "Salta";
+
+/* Cell title in device settings - mute notification until a later time. */
+"Snooze" = "Posticipa";
+
+/* The banner shown in case of proxy failure */
+"Some images could not be loaded with tracking protection." = "Non è possibile caricare alcune immagini con la protezione da tracciamento.";
+
+/* menu title */
+"Spam" = "Spam";
+
+/* The title of the star action in action sheet
+   VoiceOver title of star button in the message view */
+"Star" = "Preferito";
+
+/* Title */
+"Star/unstar" = "Aggiungi/rimuovi preferiti";
+
+/* menu title
+   Springboard (3D Touch) shortcuts action
+   VoiceOver: email is starred */
+"Starred" = "Preferiti";
+
+/* contact placeholder */
+"State" = "Stato";
+
+/* network troubleshot cell title */
+"Still can't find a solution" = "Non è ancora possibile trovare una soluzione";
+
+/* cell title in device settings */
+"Storage" = "Archiviazione";
+
+/* Alert title */
+"Storage full" = "Memoria piena";
+
+/* The title of storage limit in settings for encrypted search */
+"Storage limit" = "Limite di memoria";
+
+/* Storage warning */
+"Storage quota exceeded" = "Limite d'archiviazione superato";
+
+/* The title of storage usage in settings for encrypted search */
+"Storage used" = "Memoria utilizzata";
+
+/* The text for determining the size of the encrypted search index */
+"Storage used: " = "Memoria utilizzata: ";
+
+/* Title */
+"Storage Warning" = "Avviso di archiviazione";
+
+/* The message after tapping the encryption icon. */
+"Stored with zero-access encryption" = "Archiviato con crittografia ad accesso zero";
+
+/* contact placeholder */
+"Street" = "Via";
+
+/* Placeholder */
+"Subject" = "Oggetto";
+
+/* subject: text when forward */
+"Subject:" = "Oggetto:";
+
+/* The subject of the email draft created in the network troubleshoot view. */
+"Subject..." = "Oggetto...";
+
+/* menu title
+   The title of a subscription plans screen */
+"Subscription" = "Abbonamento";
+
+/* cell title in app settings */
+"Swipe actions" = "Azioni di scorrimento";
+
+/* The string that will be read by VoiceOver if the user wants to switch selection mode. */
+"Switch selection mode" = "Cambia modalità di selezione";
+
+/* The title of voice over action that switches the unread filter status in the inbox */
+"Switch unread filter" = "Cambia filtro non letto";
+
+/* Alert when switched account by clicking notification of another account */
+"Switched to account '%@'" = "Passato all'account '%@'";
+
+/* Error */
+"System can't copy the file" = "Il sistema non può copiare il file";
+
+/* Title */
+"Take new photo" = "Scatta nuova foto";
+
+/* No comment provided by engineer. */
+"Tap here to set" = "Tocca qui per impostare";
+
+/* Placeholder in text view destined to gather written user feedback */
+"Tell us about your experience. (Optional)" = "Parlaci della tua esperienza. (Facoltativo)";
+
+/* Antivirus interference description. */
+"Temporarily disable or remove your antivirus software." = "Disattivare o rimuovere temporaneamente il software antivirus.";
+
+/* The title of the terms and conditions button in referral share view. */
+"Terms & conditions" = "Termini e condizioni";
+
+/* No comment provided by engineer. */
+"Thank you for submitting a bug report.  We have added your report to our bug tracking system." = "Grazie per averci inviato una segnalazione di bug. La abbiamo aggiunta al nostro sistema di tracciamento dei bug.";
+
+/* Comment in banner thanking user for providing feedback */
+"Thank you for your feedback!" = "Grazie per il tuo feedback!";
+
+/* Error message */
+"The 2 passwords are not matching" = "Le 2 password non corrispondono";
+
+/* The content of the alert after tapping reset in toolbar customization view. */
+"The actions in the toolbar will be reset to default" = "Ripristina i comandi predefiniti nella toolbar";
+
+/* Info banner to inform the user that indexing might be stopped when the app is closed. */
+"The download will stop if the Proton Mail app is closed." = "Il download si interromperà se l'app Proton Mail viene chiusa.";
+
+/* Description */
+"The draft cache is broken. Please try again." = "La cache della bozza è danneggiata. Per favore prova nuovamente.";
+
+/* Alert message when attachment upload failed */
+"The following files couldn't be attached:" = "Impossibile allegare i seguenti file:";
+
+/* The alert title of user trying to open a scheduled-send message after its time is up. */
+"The message is being sent and will move to the Sent folder once sending is complete." = "Il messaggio è in fase di invio e si sposterà nella cartella Inviati una volta completato l'invio.";
+
+/* update password error */
+"The new password can't be empty." = "La nuova password non può essere vuota.";
+
+/* update password error */
+"The new password does not match." = "La nuova password non corrisponde.";
+
+/* update password error */
+"The new password needs to be at least 8 characters long" = "La nuova password deve contenere almeno 8 caratteri";
+
+/* update password error */
+"The password is wrong." = "La password non è corretta.";
+
+/* Error message */
+"The password must be between 8 and 21 characters long" = "La password dev'essere lunga tra 8 e 21 caratteri";
+
+/* The error message of entering an invalid password */
+"The PIN codes must match!" = "I codici PIN devono corrispondere!";
+
+/* update password error */
+"The private key update failed." = "L'aggiornamento della chiave privata non è riuscito.";
+
+/* Title */
+"The request timed out." = "La richiesta è scaduta.";
+
+/* The error message while calculating the encryption preferences */
+"The sending key is not valid" = "La chiave di invio non è valida";
+
+/* Warning message */
+"The sending time needs to be at least 5 minutes in the future." = "Il tempo di invio deve essere di almeno 5 minuti nel futuro.";
+
+/* Description */
+"The size limit for attachments is 25 MB." = "Il limite di dimensione per gli allegati è di 25 MB.";
+
+/* Unsupported url alert message */
+"The URL you are trying to access is not standard and may not load properly. Do you want to open it using your device's default browser?" = "L'URL che stai cercando di accedere non è standard e potrebbe non essere caricato correttamente. Vuoi aprirlo usando il browser predefinito del tuo dispositivo?";
+
+/* Alert to confirm signout with pending message in the queue */
+"There are unsent messages that will be lost if you sign out" = "Ci sono messaggi non inviati che andranno persi se ti disconnetti";
+
+/* Alert message when user tries to delete label */
+"This action cannot be undone." = "Quest'azione non è annullabile.";
+
+/* Alert message when user tries to delete folder */
+"This action cannot be undone. Emails stored in this folder will not be deleted and can be found in the All Mail folder." = "Quest'azione non è annullabile. Le email memorizzate in questa cartella non saranno eliminate e si possono trovare nella cartella Tutte le Email.";
+
+/* No comment provided by engineer. */
+"This conversation contains non-trashed messages." = "Questa conversazione contiene messaggi non cestinati.";
+
+/* No comment provided by engineer. */
+"This conversation contains trashed messages" = "Questa conversazione contiene messaggi cestinati";
+
+/* spam score warning */
+"This email seems to be from a Proton Mail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!" = "Questa email sembra provenire da un indirizzo Proton Mail, ma arriva dall'esterno del nostro sistema e ha fallito la nostra prova di autenticazione. Potrebbe essere falsa o non correttamente inoltrata!";
+
+/* Description for undo send */
+"This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame." = "Questa funzione ritarda l'invio delle tue email, dandoti la possibilità di annullare l'invio durante il periodo di tempo selezionato.";
+
+/* The subtitle will be shown when folder doesnt have emails */
+"This folder is empty" = "Questa cartella è vuota";
+
+/* The content of the link confirmation alert of spam email. */
+"This link leads to a website that might be trying to steal your information, such as passwords and credit card details.\n%@\n\nFor your security, do not continue." = "Questo collegamento porta a un sito Web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito.\n%@\n\nPer la tua sicurezza, non continuare.";
+
+/* The message of the alert of the user trying to send a message that was schedule-send. */
+"This message is no longer scheduled to be sent later. If you still want to send it later, you can tap on \"Schedule send\"" = "Questo messaggio non è più programmato per essere inviato in seguito. Se desideri comunque inviarlo in un secondo momento, puoi cliccare \"Programma invio\"";
+
+/* spam score warning */
+"This message may be a phishing attempt. Please check the sender and contents to make sure they are legitimate." = "Questo messaggio potrebbe essere un tentativo di phishing. Per favore controlla il mittente e il contenuto per assicurarti che essi siano legittimi.";
+
+/* The title of auto reply banner */
+"This message was automatically generated" = "Questo messaggio è stato generato automaticamente";
+
+/* The title of the scheduled message banner. */
+"This message will be sent on %@ at %@" = "Questo messaggio verrà inviato il %1$@ alle %2$@";
+
+/* expiration time count down */
+"This message will expire in %dD %dH %dM" = "Questo messaggio scadrà in %1$dG %2$dH %3$dM";
+
+/* Title */
+"This preference will fallback to Safari if the browser of choice is uninstalled." = "Questa preferenza tornerà a Safari se il browser scelto viene disinstallato.";
+
+/* The title of the info label in the second segment of the Customize toolbar setting view. */
+"This toolbar appears when selecting multiple messages in your inbox." = "Questa toolbar apparirà in caso di selezione multipla di messaggi nella posta in arrivo.";
+
+/* The title of the info label in the first segment of the Customize toolbar setting view. */
+"This toolbar is visible when reading a message." = "Questa toolbar sarà visibile durante la lettura di un messaggio.";
+
+/* The subtitle of empty inbox */
+"Time to relax" = "Tempo di rilassarsi";
+
+/* A section title for timing section to set auto lock timing */
+"Timing" = "Tempo";
+
+/* contacts talbe cell Title title */
+"Title" = "Titolo";
+
+/* Cert pinning failed alert message */
+"TLS certificate validation failed. Your connection may be monitored and the app is temporarily blocked for your safety." = "Convalida del certificato TLS non riuscita. La tua connessione potrebbe essere monitorata e l'app è temporaneamente bloccata per la tua sicurezza.";
+
+/* Cert pinning failed alert message */
+"TLS certificate validation failed. Your connection may be monitored and the app is temporarily blocked for your safety.\n\nSwitch networks immediately." = "Convalida del certificato TLS fallita. La tua connessione potrebbe esser monitorata e l'app esser bloccata temporaneamente per la tua sicurezza.\n\nCambia immediatamente rete.";
+
+/* message To: feild
+   Title */
+"To" = "A";
+
+/* The title of the time label of the scheduled message that is about to be sent today. */
+"Today, %@" = "Oggi, %@";
+
+/* One of schedule time options */
+"Tomorrow" = "Domani";
+
+/* scheduled send message at tomorrow morning Action */
+"Tomorrow at 08:%02d AM" = "Domani alle 08:%02d AM";
+
+/* The title of the time label of the scheduled message that is about to be sent tomorrow. */
+"Tomorrow, %@" = "Domani, %@";
+
+/* Alert message */
+"Too many messages waiting to be sent.\nPlease wait until another message has been sent to schedule this one." = "Troppi messaggi sono in attesa di essere inviati. \nPer poter pianificare un altro messaggio, si prega di attendere finché un altro non verrà inviato.";
+
+/* The title of the section header in the toolbar customize view. */
+"Toolbar actions (select up to 5)" = "Comandi toolbar (seleziona fino a 5)";
+
+/* The title of the track reward button in referral share view. */
+"Track your rewards" = "Tieni traccia delle tue ricompense";
+
+/* mail location desc
+   menu title */
+"Trash" = "Cestino";
+
+/* network troubleshot view title */
+"TroubleShooting" = "Risoluzione problemi";
+
+/* The error message while calculating the encryption preferences */
+"Trusted keys are not valid for sending" = "Le chiavi attendibili non sono valide per l'invio";
+
+/* ISP problem description */
+"Try connecting to Proton from a different network (or use %1$@ or %2$@)." = "Prova a connetterti a Proton da una rete diversa (o usa %1$@ o %2$@).";
+
+/* Placeholder */
+"Two Factor Code" = "Codice a due fattori";
+
+/* Internal type casting error */
+"Type casting error" = "Errore del tipo di trasmissione";
+
+/* Description */
+"Unable to edit this message offline" = "Non è possibile modificare questo messaggio senza connessione";
+
+/* Description */
+"Unable to parse response" = "Impossibile analizzare la risposta";
+
+/* Description */
+"Unable to parse the response object:\n%@" = "Impossibile analizzare l'oggetto della risposta:%@";
+
+/* error when sending the message */
+"Unable to send the email" = "Impossibile inviare l'email";
+
+/* No comment provided by engineer. */
+"Undisclosed Recipients" = "Destinatari nascosti";
+
+/* Action */
+"Undo" = "Annulla";
+
+/* No comment provided by engineer. */
+"Undo send" = "Annulla invio";
+
+/* title, default display name */
+"Unknown" = "Sconosciuto";
+
+/* Error */
+"Unknown Error" = "Errore sconosciuto";
+
+/* The text for current selection of the storage limit of encrypted search when there is no limit. */
+"Unlimited" = "Senza limiti";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Unlimited folders and labels" = "Cartelle ed etichette illimitate";
+
+/* The content of the up sell content of the scheduled send. */
+"Unlock custom message scheduling and other benefits when you upgrade your plan." = "Sblocca la pianificazione dei messaggi personalizzata e altri vantaggi quando effettui l'upgrade del tuo piano.";
+
+/* Alert when user enabled FaceID in app settings but restricted the use of FaceID in device settings */
+"Unlock required" = "Sblocco richiesto";
+
+/* The unread title of unread action button in mailbox view */
+"unread" = "non letto";
+
+/* No comment provided by engineer. */
+"Unread" = "Da leggere";
+
+/* The title of the star action in action sheet */
+"Unstar" = "Rimuovi dai Preferiti";
+
+/* The title of unsubscribe banner */
+"Unsubscribe from mailing list" = "Annulla iscrizione alla mailing list";
+
+/* Error message */
+"Unsupported file type" = "Tipo di file non supportato";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Up to 3 custom email domains" = "Fino a 3 domini email personalizzati";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Up to 15 email addresses" = "Fino a 15 indirizzi email";
+
+/* The up sell bullet point in the schedule send promotion view. */
+"Up to 500 GB of storage" = "Fino a 500 GB di spazio di archiviazione";
+
+/* update notification email error title */
+"Update Notification Email" = "Email di notifica di aggiornamento";
+
+/* The title of last update status of more than 1 hour */
+"Updated >1 hour ago" = "Aggiornato > ora fa";
+
+/* The title of last update status of updated just now */
+"Updated just now" = "Aggiornato proprio ora";
+
+/* Welcome to rebranding title */
+"Updated Proton, unified protection" = "Nuovo Proton, protezione unificata";
+
+/* The title of the upgrade button in the schedule send promotion view. */
+"Upgrade now" = "Effettua l'upgrade adesso";
+
+/* Error */
+"Upgrade to a paid plan to send from your %@ address" = "Effettui l'upgrade ad un piano a pagamento per inviare dal suo indirizzo %@";
+
+/* Action */
+"Upload device contacts" = "Carica i contatti del dispositivo";
+
+/* Description */
+"Upload iOS contacts to Proton Mail?" = "Caricare i contatti di iOS su Proton Mail?";
+
+/* default vcard types */
+"URL" = "URL";
+
+/* Option title */
+"Use folder colors" = "Usa i colori delle cartelle";
+
+/* error title */
+"Verification error" = "Errore di verifica";
+
+/* error details */
+"Verification of this content’s signature failed" = "Verifica della firma di questo contenuto fallita";
+
+/* View action for view scheduled message. */
+"View" = "Visualizza";
+
+/* No comment provided by engineer. */
+"View headers" = "Visualizza intestazioni";
+
+/* No comment provided by engineer. */
+"View HTML" = "Mostra HTML";
+
+/* The title of the view message in dark mode action in action sheet */
+"View message in Dark mode" = "Visualizza il messaggio in modalità Scura";
+
+/* The title of the view message in light mode action in action sheet */
+"View message in Light mode" = "Visualizza il messaggio in modalità Chiara";
+
+/* Title */
+"Warning" = "Attenzione";
+
+/* human check warning description */
+"Warning: Before you pass the human check you can't send email!" = "Attenzione: prima di passare il controllo umano, non è possibile inviare email!";
+
+/* The title of the link confirmation alert of spam email. */
+"Warning: suspected fake website" = "Attenzione: sospetto sito web falso";
+
+/* Local notification text */
+"We could not send your message, possibly because of a poor network connection. Your message was saved to Drafts and will be sent automatically the next time you open the app." = "Non è stato possibile inviare il tuo messaggio, forse a causa di una scarsa connessione internet. Il tuo messaggio è stato salvato nelle bozze e verrà inviato automaticamente la prossima volta che aprirai l'app.";
+
+/* Message of a banner which is displayed on the messages list when offline */
+"We have trouble connecting to the servers. Please reconnect." = "Stiamo avendo problemi di connessione al server. Sei pregato di riconnetterti.";
+
+/* alert body before list of addresses */
+"We recommend setting up a password instead for the following recipients:" = "Consigliamo invece di configurare una password per i seguenti destinatari:";
+
+/* alert body before list of addresses */
+"We recommend setting up a password instead, or disabling PGP for the following recipients:" = "Consigliamo invece di configurare una password o disabilitare il PGP per i seguenti destinatari:";
+
+/* week */
+"week" = "settimana";
+
+/* Example feedback */
+"Wonderful" = "Fantastica";
+
+/* default vcard types */
+"Work" = "Lavoro";
+
+/* Title */
+"wrote:" = "ha scritto:";
+
+/* Error message */
+"Yes, attach details of payment" = "Sì, allegare i dettagli del pagamento";
+
+/* No comment provided by engineer. */
+"Yesterday" = "Ieri";
+
+/* link opeining confirmation */
+"You are about to launch the web browser and navigate to" = "Stai per avviare il browser web e navigare in";
+
+/* The title of empty inbox */
+"You are all caught up!" = "Ora sai tutto!";
+
+/* No comment provided by engineer. */
+"You are not connected. We cannot display the content of your message." = "Non sei connesso. Non possiamo mostrare il contenuto del tuo messaggio.";
+
+/* The text shown on the mailbox when the device is in offline mode */
+"You are offline" = "Sei offline";
+
+/* The title of the info bubble view in toolbar customization view. */
+"You can choose and rearrange the actions in your toolbar" = "Puoi scegliere e riordinare i comandi nella tua toolbar";
+
+/* The message of the conversation notice view shown in the conversation view. */
+"You can disable conversations from settings any time." = "Puoi disabilitare le conversazioni dalle impostazioni in qualsiasi momento.";
+
+/* The content of the Customize toolbar spotlight view. */
+"You can now choose and rearrange the actions in this bar" = "Puoi scegliere e riordinare i comandi di questa barra";
+
+/* The content of the introducation view of the schedule send */
+"You can now schedule your messages to be sent later" = "Ora puoi programmare i tuoi messaggi da inviare più tardi";
+
+/* The description of encrypted search at the pop up. */
+"You can now search within your messages. This feature can be enabled from settings at any time." = "Ora puoi cercare tra i tuoi messaggi. Questa funzionalità può essere attivata dalle impostazioni in qualunque momento.";
+
+/* Explanation of downloaded messages for encrypted search */
+"You can search within downloaded messages. For all other messages, only the recipient list and subject line will be searched." = "Puoi cercare tra i messaggi scaricati. Per tutti gli altri messaggi, verranno cercati solo l'elenco dei destinatari e la riga dell'oggetto.";
+
+/* pm.me upgrade warning in composer */
+"You can't set %@ address as default because it is a paid feature." = "Non puoi impostare l'indirizzo %@ come predefinito perché è una funzionalità a pagamento.";
+
+/* Alert when user enabled FaceID in app settings but restricted the use of FaceID in device settings */
+"You disabled %@ in your system settings. %@ has been used to protect important account information. To access your account, go to settings and reactivate %@, or log back in." = "Hai disabilitato il %@ nelle tue impostazioni di sistema. %@ è stato usato per proteggere importanti informazioni del profilo. Per accedere al tuo profilo, vai alle impostazioni e riattivalo, o accedi nuovamente.";
+
+/* Message */
+"You have %d new emails!" = "Ha %d nuovi messaggi!";
+
+/* Title */
+"You have a new email!" = "Ha un nuovo messaggio!";
+
+/* incorrect email format error while sending */
+"You have entered at least one invalid email address. Please verify your recipients." = "Hai inserito almeno un indirizzo email non valido. Sei pregato di verificare i tuoi destinatari.";
+
+/* incorrect email format error while sending */
+"You have entered at least one unknown recipient. Please verify your recipients." = "Hai inserito almeno un destinatario sconosciuto. Sei pregato di verificare i tuoi destinatari.";
+
+/* The status text of message history in downloaded messages if the user has no messages. */
+"You have no messages." = "Non hai messaggi.";
+
+/* Confirmation message */
+"You have unsaved changes. Do you want to save it?" = "Ha delle modifiche non salvate, vorrebbe salvarle?";
+
+/* Content of space warning */
+"You have used %d%% of your storage space (%@). Please upgrade your plan to continue to send and receive emails." = "Hai usato %1$d%% del tuo spazio d'archiviazione (%2$@). Sei pregato di aggiornare il tuo piano per continuare a inviare e ricevere email.";
+
+/* Content of space warning */
+"You have used up all of your storage space (%@). Please upgrade your plan to continue to send and receive emails." = "Hai usato tutto il tuo spazio d'archiviazione (%@). Sei pregato di aggiornare il tuo piano per continuare a inviare e ricevere email.";
+
+/* Description */
+"You need at least one recipient to send" = "Hai bisogno di almeno un destinatario per inviare";
+
+/* Alert to confirm signout */
+"You will be switched to %@" = "Verrai passato a %@";
+
+/* Confirmation message before deleting a message */
+"You're going to delete the message irreversibly. Are you sure?" = "Stai per eliminare il messaggio in modo irreversibile. Sei sicuro?";
+
+/* Title of the spotlight for tracker protection */
+"You’re safe from email trackers" = "Sei al sicuro dai sistemi di tracciamento email";
+
+/* No comment provided by engineer. */
+"Your changes will be discarded" = "Le tue modifiche saranno scartate";
+
+/* Goverment blocking description */
+"Your country may be blocking access to Proton. Try using %1$@ (or any other VPN) or %2$@ to access Proton." = "Il tuo paese potrebbe bloccare l'accesso a Proton. Prova ad utilizzare %1$@ (o qualsiasi altra VPN) o %2$@ per accedere a Proton.";
+
+/* Spotlight explanation of the feature */
+"Your emails now come with remote images loaded by default. Senders will not know if, where, or when you opened their emails.\nTo change this, go to Settings → Account settings → Privacy." = "Stai ricevendo le email con immagini remote caricate per impostazione predefinita. I mittenti non sapranno se, dove o quando hai aperto le loro email.\nPer modificare questa impostazione, vai su Impostazioni → Impostazioni account → Privacy.";
+
+/* Title of user feedback view */
+"Your feedback" = "Il tuo feedback";
+
+/* The section title of folder manager table */
+"Your folders" = "Le tue cartelle";
+
+/* The title link of the textfield of the referral link in referral share view. */
+"Your invite link" = "Il link del tuo invito";
+
+/* The section title of label manager table */
+"Your labels" = "Le tue etichette";
+
+/* The status text of message history in downloaded messages if indexbuilding is in progress. */
+"Your messages are being downloaded..." = "I tuoi messaggi sono in fase di scaricamento...";
+
+/* Description */
+"Your session has expired because you have been inactive for a while or because it has been revoked. Please log back in." = "La tua sessione è scaduta perché sei stato inattivo per un po' di tempo o perché è stata revocata. Effettua di nuovo il login.";
+
+/* contact placeholder */
+"ZIP" = "CAP";
+

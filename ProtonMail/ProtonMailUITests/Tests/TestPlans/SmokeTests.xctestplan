@@ -1,0 +1,57 @@
+{
+  "configurations" : [
+    {
+      "id" : "16E6F902-A8D7-4213-90E9-F3F2690C5FD6",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "DYNAMIC_DOMAIN",
+        "value" : "$(DYNAMIC_DOMAIN)"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ProtonMail.xcodeproj",
+      "identifier" : "6C2152B9B3009541EC36C038232F5EE3",
+      "name" : "ProtonMailUITests"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "selectedTests" : [
+        "AccountSettingsTests\/testChangeDisplayName()",
+        "AccountSettingsTests\/testCreateAndDeleteFolder()",
+        "AccountSettingsTests\/testCreateAndDeleteLabel()",
+        "AccountSettingsTests\/testDisablePrivacyAutoShowImages()",
+        "ExternalAccountsCapabilityATests\/testSignInWithExternalAccountShowsPopup()",
+        "ExternalAccountsCapabilityATests\/testSignInWithInternalAccountWorks()",
+        "ExternalAccountsCapabilityATests\/testSignInWithUsernameAccountWorks()",
+        "ExternalAccountsCapabilityATests\/testSignUpWithExternalAccountIsNotAvailable()",
+        "ExternalAccountsCapabilityATests\/testSignUpWithInternalAccountWorks()",
+        "ExternalAccountsCapabilityATests\/testSignUpWithUsernameAccountIsNotAvailable()",
+        "ExternalAccountsTests\/testSignInWithExternalAccountShowsPopup()",
+        "LabelsFoldersTests\/testCreateAndDeleteCustomFolder()",
+        "LabelsFoldersTests\/testCreateAndDeleteCustomLabel()",
+        "LogoutTests\/testLogoutOnePassUser()",
+        "MenuTests\/testSaveSpecialCharacterDisplayName()",
+        "MenuTests\/testSaveTwoWordsDisplayName()",
+        "MultiuserManagementTests\/testSwitchAccount()",
+        "PinTests\/testTurnOnAndOffPin()",
+        "SpamTests\/testSwipeToSpamMessage()",
+        "UnauthSessionTests\/testRefreshingAndOpeningMailWorks()"
+      ],
+      "target" : {
+        "containerPath" : "container:ProtonMail.xcodeproj",
+        "identifier" : "67596B012358FAE8B0782EE2",
+        "name" : "ProtonMailUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

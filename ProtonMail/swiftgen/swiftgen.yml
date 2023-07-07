@@ -1,0 +1,7 @@
+xcassets:
+  inputs:
+    - ../ProtonMail/Resource/APP_share/Images.xcassets
+  outputs:
+    - templatePath: xcassets-custom.stencil
+      output: ../ProtonMail/Resource/APP_share/Generated/Images.generated.swift
+      

@@ -1,0 +1,84 @@
+{
+   "targets": {
+      "Share": {
+         "type": "app-extension",
+         "platform": "iOS",
+         "sources": [
+            {
+               "path": "Share",
+               "excludes": [
+                  "**/*.plist",
+                  "**/*.entitlements",
+                  "**/*.md",
+                  "Base.lproj"
+               ]
+            },
+            {
+               "path": "ProtonMail",
+               "includes": [
+                  "**/share",
+                  "**/APP_share",
+                  "**/APP_share_push",
+                  "**/APP_share_push_siri",
+                  "**/APP_share_push_uiTest",
+                  "**/APP_share_siri",
+                  "Generated",
+                  "Resource/Localization"
+               ]
+            }
+         ],
+         "dependencies": [
+            {
+               "sdk": "libc++.tbd"
+            },
+            {
+               "target": "ProtonMailAnalytics"
+            }
+         ],
+         "preBuildScripts": [
+            {
+               "basedOnDependencyAnalysis": false,
+               "name": "swiftGen",
+               "path": "xcodeGen/swiftGen.sh",
+               "outputFiles": [
+                  "${SRCROOT}/ProtonMail/Resource/APP_share/Generated/Images.generated.swift"
+               ]
+            },
+            {
+               "basedOnDependencyAnalysis": false,
+               "name": "Sourcery",
+               "path": "xcodeGen/sourcery.sh"
+            },
+            {
+               "name": "LicensePlist",
+               "outputFiles": [
+                  "${SRCROOT}/ProtonMail/Supporting Files/Settings.bundle"
+               ],
+               "path": "xcodeGen/licensePlist.sh"
+            }
+         ],
+         "configFiles": {
+            "Debug": "xcodeGen/xcconfig/Share-Debug.xcconfig",
+            "Release": "xcodeGen/xcconfig/Share-Release.xcconfig",
+            "Enterprise Debug": "xcodeGen/xcconfig/Share-EnterpriseDebug.xcconfig",
+            "Enterprise Release": "xcodeGen/xcconfig/Share-Enterprise.xcconfig"
+         },
+         "settings": {
+            "configs": {
+               "Debug": {
+                  "INFOPLIST_FILE": "Share/Info.plist"
+               },
+               "Release": {
+                  "INFOPLIST_FILE": "Share/Info.plist"
+               },
+               "Enterprise Debug": {
+                  "INFOPLIST_FILE": "Share/InfoDev.plist"
+               },
+               "Enterprise Release": {
+                  "INFOPLIST_FILE": "Share/InfoDev.plist"
+               }
+            }
+         }
+      }
+   }
+}
