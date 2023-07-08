@@ -24,6 +24,7 @@ final class ProtonMailDeloitteUITests: MainTestCase {
     private let menuRobot = MenuViewRobot()
     private let contactsRobot = ContactsViewRobot()
     private let contactEditRobot = ContactEditViewRobot()
+    private let folderEditRobot = FolderEditViewRobot()
 
     override func setUp() {
         super.setUp()
@@ -67,24 +68,20 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         contactsRobot.waitForAppearance()
         contactsRobot.checkForContact("smith")
     }
-    /*
-    func testSaveNewContact(){
-        let sideMenu = app.buttons["MailboxViewController.menuBarButtonItem"]
-        let contactButton = app.tables ["MenuItemTableViewCell.Contacts"]
-        let addButton =
-        let newContact =
-        let name = "John Smith"
-        let saveButton =
 
-    }
-*/
-    func testLaunchPerformance(){
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testCustomFolder() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.addFolder()
+        folderEditRobot.waitForAppearance()
+        folderEditRobot.editFolderName("TestFolder")
+        folderEditRobot.clickOnDone()
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.checkForItem("TestFolde")
+
     }
 }
 

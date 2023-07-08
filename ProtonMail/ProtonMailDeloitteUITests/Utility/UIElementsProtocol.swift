@@ -54,5 +54,14 @@ public extension UIElementsProtocol {
     func table(_ identifier: String) -> XCUIElement {
         return app.tables[identifier]
     }
+
+    func image(_ identifier: String) -> XCUIElement {
+        return app.images[identifier]
+    }
+
+    func cell(_ identifier: String) -> XCUIElement {
+        return app.cells[identifier]
+    }
 }
+
 

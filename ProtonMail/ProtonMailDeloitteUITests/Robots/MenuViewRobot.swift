@@ -22,7 +22,10 @@ class MenuViewRobot: BaseRobot {
 
     let menuViewPrimaryUserID = "MenuViewController.primaryUserview"
     let menuItemContactsID = "Contacts.name"
+    let menuItemSettingsID = "Settings.name"
     let menuTableViewID = "MenuViewController.tableView"
+    let customMenuItemID = "MenuItemTableViewCell."
+    let addFolderID = "MenuItemTableViewCell.Add_Folder"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
         let menuConfirmationElement = app.tables[menuTableViewID]
@@ -30,11 +33,28 @@ class MenuViewRobot: BaseRobot {
         XCTAssert(result, "The MenuViewController confirmation element has not appeared")
     }
 
+    func addFolder() {
+        clickOnCell(addFolderID)
+    }
+
     func clickOnContacts() {
         clickOnStaticText(menuItemContactsID)
     }
 
+    func clickOnSettings() {
+        clickOnStaticText(menuItemSettingsID)
+    }
+
+    func checkForItem(_ itemName: String) {
+        let id = customMenuItemID + itemName
+        cell(id).exists
+    }
+
     func swipeDownMenu() {
         app.tables[menuTableViewID].swipeUp()
+    }
+
+    func swipeUpMenu() {
+        app.tables[menuTableViewID].swipeDown()
     }
 }

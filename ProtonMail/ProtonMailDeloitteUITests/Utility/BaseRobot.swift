@@ -55,6 +55,18 @@ open func waitForAppearance(timeout: TimeInterval = 15) {
     }
 
     @discardableResult
+    func clickOnImage(_ id: String) -> Self {
+        image(id).tap()
+        return self
+    }
+
+    @discardableResult
+    func clickOnCell(_ id: String) -> Self {
+        cell(id).tap()
+        return self
+    }
+
+    @discardableResult
     func writeOnTextField(_ id: String, _ text: String) -> Self {
         textField(id).tap()
         textField(id).typeText(text)
