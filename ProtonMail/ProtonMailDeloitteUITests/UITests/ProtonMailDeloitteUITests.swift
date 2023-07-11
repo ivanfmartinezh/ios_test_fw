@@ -25,6 +25,10 @@ final class ProtonMailDeloitteUITests: MainTestCase {
     private let contactsRobot = ContactsViewRobot()
     private let contactEditRobot = ContactEditViewRobot()
     private let folderEditRobot = FolderEditViewRobot()
+    private let settingsDeviceRobot = SettingsDeviceViewRobot()
+    private let toolbarRobot = ToolbarSettingViewRobot()
+    private let conversationRobot = ConversationViewRobot()
+    private let composerRobot = ComposerViewRobot()
 
     override func setUp() {
         super.setUp()
@@ -83,6 +87,34 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         menuRobot.checkForItem("TestFolde")
 
     }
+
+    func testAddToolbarAction() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.swipeDownMenu()
+        menuRobot.clickOnSettings()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.clickOnCustomizeToolbar()
+        toolbarRobot.waitForAppearance()
+        toolbarRobot.addToolbarAction("Reply")
+        toolbarRobot.clickOnDone()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.clickOnCancel()
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnMessageByIndex(1)
+        conversationRobot.waitForAppearance()
+        conversationRobot.checkActionInToolbar("ic reply")
+        conversationRobot.clickOnBackButton()
+    }
+
+    func testSendMessage() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnCompose()
+        composerRobot.waitForAppearance()
+        composerRobot.sendBlankEmail(composerRobot.userEmail, "Test_Message")
+        // sleep(3)
+        mailboxRobot.checkForBanner()
+        sleep(3)
+    }
 }
-
-

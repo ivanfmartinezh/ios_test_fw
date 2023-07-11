@@ -18,28 +18,30 @@
 import Foundation
 import XCTest
 
-class SettingsDeviceViewRobot: BaseRobot {
+class ConversationViewRobot: BaseRobot {
 
-    let settingsDeviceViewID = "Settings"
-    let accountSettingsID = "ic-chevron-right"
-    let cancelButtonID = "Close"
-    let customizeToolbarID = "SettingsGeneralCell.Customize_toolbar"
+    let composerViewID = "PMToolBarView.unreadButton"
+    let backButtonID = "ic-arrow-left"
+    let toTextFieldID = "To:TextField"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
-        let settingsDeviceConfirmationElement = app.staticTexts[settingsDeviceViewID]
-        let result = settingsDeviceConfirmationElement.waitForExistence(timeout: timeout)
-        XCTAssert(result, "The SettingsDeviceViewController confirmation element has not appeared")
+        let composerViewConfirmationElement = app.buttons[composerViewID]
+        let result = composerViewConfirmationElement.waitForExistence(timeout: timeout)
+        XCTAssert(result, "The ComposerViewController confirmation element has not appeared")
     }
 
-    func clickOnAccountSettings() {
-        clickOnImage(accountSettingsID)
+    func checkActionInToolbar(_ action: String) {
+        let actionVisible = button(action).exists
+        XCTAssert(actionVisible, "The action is not visible on screen")
     }
 
-    func clickOnCancel() {
-        clickOnButton(cancelButtonID)
-    }
-
-    func clickOnCustomizeToolbar() {
-        clickOnCell(customizeToolbarID)
+    func clickOnBackButton() {
+        let backButton = app.navigationBars.buttons["Inbox"] // Replace "Back" with the actual label of the Back button
+        backButton.tap()
     }
 }
+
+
+
+
+

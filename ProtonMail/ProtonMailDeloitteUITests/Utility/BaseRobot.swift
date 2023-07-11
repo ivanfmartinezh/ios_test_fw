@@ -20,7 +20,9 @@ import XCTest
 
 open class BaseRobot: UIElementsProtocol {
 
-open func waitForAppearance(timeout: TimeInterval = 15) {
+    let userEmail = "ivanf.martinezh.test@protonmail.com"
+
+    open func waitForAppearance(timeout: TimeInterval = 15) {
 
     }
 

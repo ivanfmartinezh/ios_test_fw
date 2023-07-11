@@ -18,28 +18,27 @@
 import Foundation
 import XCTest
 
-class SettingsDeviceViewRobot: BaseRobot {
+class ToolbarSettingViewRobot: BaseRobot {
 
-    let settingsDeviceViewID = "Settings"
-    let accountSettingsID = "ic-chevron-right"
-    let cancelButtonID = "Close"
+    let toolbarSettingViewID = "Customize toolbar"
     let customizeToolbarID = "SettingsGeneralCell.Customize_toolbar"
+    let doneButtonID = "Done"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
-        let settingsDeviceConfirmationElement = app.staticTexts[settingsDeviceViewID]
-        let result = settingsDeviceConfirmationElement.waitForExistence(timeout: timeout)
-        XCTAssert(result, "The SettingsDeviceViewController confirmation element has not appeared")
+        let toolbarSettingConfirmationElement = app.staticTexts[toolbarSettingViewID]
+        let result = toolbarSettingConfirmationElement.waitForExistence(timeout: timeout)
+        XCTAssert(result, "The ToolbarSettingViewController confirmation element has not appeared")
     }
 
-    func clickOnAccountSettings() {
-        clickOnImage(accountSettingsID)
+    func clickOnDone() {
+        clickOnButton(doneButtonID)
     }
 
-    func clickOnCancel() {
-        clickOnButton(cancelButtonID)
-    }
-
-    func clickOnCustomizeToolbar() {
-        clickOnCell(customizeToolbarID)
+    func addToolbarAction(_ action: String) {
+        let actionCell = app.cells.containing(.staticText, identifier: action).firstMatch
+        let addButton = actionCell.buttons.firstMatch
+        addButton.tap()
     }
 }
+
+

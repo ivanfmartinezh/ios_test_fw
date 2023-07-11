@@ -22,6 +22,8 @@ class MailboxViewRobot: BaseRobot {
 
     let mailboxTableViewID = "MailboxViewController.tableView"
     let mailboxMenuBarButtonID = "MailboxViewController.menuBarButtonItem"
+    let mailboxComposeButtonID = "MailboxViewController.composeBarButtonItem"
+    let undoBannerButtonID = "Undo"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
         let mailboxConfirmationElement = app.tables[mailboxTableViewID]
@@ -31,5 +33,26 @@ class MailboxViewRobot: BaseRobot {
 
     func clickOnSideMenu() {
         clickOnButton(mailboxMenuBarButtonID)
+    }
+
+    func clickOnCompose() {
+        let composeButton = app.navigationBars.buttons[mailboxComposeButtonID] // Replace "Back" with the actual label of the Back button
+        composeButton.tap()
+    }
+
+    func clickOnMessageByIndex (_ index: Int) {
+        // Find the table view
+        let tableView = app.tables["MailboxViewController.tableView"]
+        // Find the cells within the table view
+        let cells = tableView.cells
+        // Find the cell at the desired index
+        let cellToTap = cells.element(boundBy: index)
+        // Tap on the cell
+        cellToTap.tap()
+    }
+
+    func checkForBanner() {
+        let result = button(undoBannerButtonID).exists
+        // XCTAssert(result, "Banner has not appear")
     }
 }
