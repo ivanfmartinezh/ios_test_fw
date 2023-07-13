@@ -26,9 +26,19 @@ class MenuViewRobot: BaseRobot {
     let menuTableViewID = "MenuViewController.tableView"
     let customMenuItemID = "MenuItemTableViewCell."
     let addFolderID = "MenuItemTableViewCell.Add_Folder"
+    let iconIdentifiers = [
+        "Inbox.icon",
+        "Drafts.icon",
+        "Sent.icon",
+        "Starred.icon",
+        "Archive.icon",
+        "Spam.icon",
+        "Trash.icon",
+        "All_Mail.icon"
+    ]
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
-        let menuConfirmationElement = app.tables[menuTableViewID]
+        let menuConfirmationElement = table(menuTableViewID)
         let result = menuConfirmationElement.waitForExistence(timeout: timeout)
         XCTAssert(result, "The MenuViewController confirmation element has not appeared")
     }
@@ -47,14 +57,22 @@ class MenuViewRobot: BaseRobot {
 
     func checkForItem(_ itemName: String) {
         let id = customMenuItemID + itemName
-        cell(id).exists
+        let item = cell(id)
+        XCTAssertTrue(item.exists, "Item \(id) does not exist.")
     }
 
     func swipeDownMenu() {
-        app.tables[menuTableViewID].swipeUp()
+        table(menuTableViewID).swipeUp()
     }
 
     func swipeUpMenu() {
-        app.tables[menuTableViewID].swipeDown()
+        table(menuTableViewID).swipeDown()
+    }
+
+    func checkForIconsExists() {
+        for identifier in iconIdentifiers {
+            let icon = image(identifier)
+            XCTAssertTrue(icon.exists, "Icon \(identifier) does not exist.")
+        }
     }
 }

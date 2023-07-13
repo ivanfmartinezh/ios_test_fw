@@ -29,6 +29,7 @@ final class ProtonMailDeloitteUITests: MainTestCase {
     private let toolbarRobot = ToolbarSettingViewRobot()
     private let conversationRobot = ConversationViewRobot()
     private let composerRobot = ComposerViewRobot()
+    private let searchRobot = SearchViewRobot()
 
     override func setUp() {
         super.setUp()
@@ -116,5 +117,29 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         // sleep(3)
         mailboxRobot.checkForBanner()
         sleep(3)
+    }
+
+    func testSideMenuIconsAppear() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.checkForIconsExists()
+    }
+
+    func testMailSearch() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSearch()
+        searchRobot.search("notify")
+        searchRobot.checkMailAppear("Proton")
+    }
+
+    func testSettingsAppear() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.swipeDownMenu()
+        menuRobot.clickOnSettings()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.checkForItemsExists()
     }
 }

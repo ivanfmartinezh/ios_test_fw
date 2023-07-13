@@ -24,6 +24,7 @@ class MailboxViewRobot: BaseRobot {
     let mailboxMenuBarButtonID = "MailboxViewController.menuBarButtonItem"
     let mailboxComposeButtonID = "MailboxViewController.composeBarButtonItem"
     let undoBannerButtonID = "Undo"
+    let searchButtonID = "MailboxViewController.searchBarButtonItem"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
         let mailboxConfirmationElement = app.tables[mailboxTableViewID]
@@ -54,5 +55,9 @@ class MailboxViewRobot: BaseRobot {
     func checkForBanner() {
         let result = button(undoBannerButtonID).exists
         // XCTAssert(result, "Banner has not appear")
+    }
+
+    func clickOnSearch() {
+        button(searchButtonID).tap()
     }
 }

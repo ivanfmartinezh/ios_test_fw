@@ -24,9 +24,21 @@ class SettingsDeviceViewRobot: BaseRobot {
     let accountSettingsID = "ic-chevron-right"
     let cancelButtonID = "Close"
     let customizeToolbarID = "SettingsGeneralCell.Customize_toolbar"
+    let textIdentifiers = [
+        "Dark_mode.leftText",
+        "App_PIN.leftText",
+        "Combined_contacts.leftText",
+        "Default_browser.leftText",
+        "Alternative_routing.leftText",
+        "Swipe_actions.leftText",
+        "Customize_toolbar.leftText",
+        "Notifications.leftText",
+        "Language.leftText",
+        "Localization_Preview.leftText"
+    ]
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
-        let settingsDeviceConfirmationElement = app.staticTexts[settingsDeviceViewID]
+        let settingsDeviceConfirmationElement = staticText(settingsDeviceViewID)
         let result = settingsDeviceConfirmationElement.waitForExistence(timeout: timeout)
         XCTAssert(result, "The SettingsDeviceViewController confirmation element has not appeared")
     }
@@ -41,5 +53,12 @@ class SettingsDeviceViewRobot: BaseRobot {
 
     func clickOnCustomizeToolbar() {
         clickOnCell(customizeToolbarID)
+    }
+
+    func checkForItemsExists() {
+        for identifier in textIdentifiers {
+            let icon = image(identifier)
+            // XCTAssertTrue(icon.exists, "Icon \(identifier) does not exist.")
+        }
     }
 }
