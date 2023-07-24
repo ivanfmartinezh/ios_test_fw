@@ -22,7 +22,7 @@ class SettingsAccountViewRobot: BaseRobot {
 
     let settingsAccountViewID = "Account settings"
     let folderCellID = "SettingsGeneralCell.Folders"
-    let backButtonID = "BackButton"
+    let backButtonID = "Settings"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
         let settingsAccountConfirmationElement = app.staticTexts[settingsAccountViewID]

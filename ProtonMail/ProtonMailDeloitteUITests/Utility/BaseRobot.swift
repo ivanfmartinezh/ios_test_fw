@@ -82,4 +82,3 @@ open class BaseRobot: UIElementsProtocol {
         return self
     }
 }
-

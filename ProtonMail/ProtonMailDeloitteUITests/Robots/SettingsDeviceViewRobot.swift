@@ -24,6 +24,8 @@ class SettingsDeviceViewRobot: BaseRobot {
     let accountSettingsID = "ic-chevron-right"
     let cancelButtonID = "Close"
     let customizeToolbarID = "SettingsGeneralCell.Customize_toolbar"
+    let languageCellID = "SettingsGeneralCell.Language"
+    let languagesIdentifiers = ["беларуская мова", "Català", "简体中文"]
     let textIdentifiers = [
         "Dark_mode.leftText",
         "App_PIN.leftText",
@@ -55,10 +57,26 @@ class SettingsDeviceViewRobot: BaseRobot {
         clickOnCell(customizeToolbarID)
     }
 
+    func clickOnLanguages() {
+        clickOnCell(languageCellID)
+    }
+
     func checkForItemsExists() {
         for identifier in textIdentifiers {
             let icon = image(identifier)
-            // XCTAssertTrue(icon.exists, "Icon \(identifier) does not exist.")
+            XCTAssertTrue(icon.exists, "Icon \(identifier) does not exist.")
         }
+    }
+
+    func checkForLanguageExists() {
+        for identifier in languagesIdentifiers {
+            let text = staticText(identifier)
+            //XCTAssertTrue(icon.exists, "Language \(identifier) does not exist.")
+        }
+    }
+
+    func swipeDown() {
+        let tableView = app.tables.firstMatch
+        tableView.swipeUp()
     }
 }

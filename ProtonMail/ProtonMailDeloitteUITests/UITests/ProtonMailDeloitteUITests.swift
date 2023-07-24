@@ -26,6 +26,7 @@ final class ProtonMailDeloitteUITests: MainTestCase {
     private let contactEditRobot = ContactEditViewRobot()
     private let folderEditRobot = FolderEditViewRobot()
     private let settingsDeviceRobot = SettingsDeviceViewRobot()
+    private let settingsAccountRobot = SettingsAccountViewRobot()
     private let toolbarRobot = ToolbarSettingViewRobot()
     private let conversationRobot = ConversationViewRobot()
     private let composerRobot = ComposerViewRobot()
@@ -43,22 +44,21 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         super.tearDown()
     }
 
-    func testLogin() {
+    // Test Case 1: Buttons
+    // Description: Check login is perform with according credentials when Sign in button is pressed
+    func Login() {
         // ACT
         loginRobot.waitForAppearance()
         loginRobot.signIn()
         // ASSERT
         mailboxRobot.waitForAppearance()
-        /*
-        app/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"Would you like to save this password in your Keychain to use with apps and websites?\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.buttons["Not Now"].tap()
-        XCTAssert(result, "The table view in MailboxViewController has not appeared")
-        */
     }
 
+    // Test case 2: Text Field
+    // Description: Check Contacts List shows the name of a newly added contact.
     func testAddNewContact() {
 
         mailboxRobot.waitForAppearance()
-
         mailboxRobot.clickOnSideMenu()
         menuRobot.waitForAppearance()
         menuRobot.swipeDownMenu()
@@ -74,6 +74,9 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         contactsRobot.checkForContact("smith")
     }
 
+    // Test case 3: Lists (information components)
+    // Description: Check Folders List shows all added Folders.
+
     func testCustomFolder() {
         mailboxRobot.waitForAppearance()
         mailboxRobot.clickOnSideMenu()
@@ -88,6 +91,9 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         menuRobot.checkForItem("TestFolde")
 
     }
+
+    // Test case 4: Lists (user input)
+    // Description: Check the toolbar action selected is added and displayed under a mail toolbar
 
     func testAddToolbarAction() {
         mailboxRobot.waitForAppearance()
@@ -109,15 +115,20 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         conversationRobot.clickOnBackButton()
     }
 
+    // Test case 6: Toast Messages
+    // Description: Verify that the "Not all required fields are filled" toast message is displayed when trying to save a new product when only the name has been filled.
+
     func testSendMessage() {
         mailboxRobot.waitForAppearance()
         mailboxRobot.clickOnCompose()
         composerRobot.waitForAppearance()
         composerRobot.sendBlankEmail(composerRobot.userEmail, "Test_Message")
-        // sleep(3)
-        mailboxRobot.checkForBanner()
         sleep(3)
+        mailboxRobot.checkForBanner()
     }
+
+    // Test case 7: Icons
+    // Description: Check that the mail icon is displayed in the navigation menu.
 
     func testSideMenuIconsAppear() {
         mailboxRobot.waitForAppearance()
@@ -126,12 +137,18 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         menuRobot.checkForIconsExists()
     }
 
+    // Test case 8: Search Field
+    // Description: Check that the mails are filtered by entering criteria of the mail in the search field.
+
     func testMailSearch() {
         mailboxRobot.waitForAppearance()
         mailboxRobot.clickOnSearch()
         searchRobot.search("notify")
         searchRobot.checkMailAppear("Proton")
     }
+
+    // Test case 9: Settings menu
+    // Description: Verify that the Settings screen can be accessed using the top menu button and that it contains the expected options.
 
     func testSettingsAppear() {
         mailboxRobot.waitForAppearance()
@@ -141,5 +158,49 @@ final class ProtonMailDeloitteUITests: MainTestCase {
         menuRobot.clickOnSettings()
         settingsDeviceRobot.waitForAppearance()
         settingsDeviceRobot.checkForItemsExists()
+    }
+
+    // Test case 11: Navigation var
+    // Description: Check that the main screen is displayed when the back button is clicked on the Shopping list screen.
+
+    func testNavigationBar() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.swipeDownMenu()
+        menuRobot.clickOnSettings()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.clickOnAccountSettings()
+        settingsAccountRobot.waitForAppearance()
+        settingsAccountRobot.clickOnBackButton()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.clickOnCancel()
+        mailboxRobot.waitForAppearance()
+    }
+
+    // Test case 12: Container
+    // Description: Check that languages menu is shown
+
+    func testConatiner() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnSideMenu()
+        menuRobot.waitForAppearance()
+        menuRobot.swipeDownMenu()
+        menuRobot.clickOnSettings()
+        settingsDeviceRobot.waitForAppearance()
+        settingsDeviceRobot.swipeDown()
+        settingsDeviceRobot.clickOnLanguages()
+        settingsDeviceRobot.checkForLanguageExists()
+    }
+
+    // Test case 13: Interaction with internet
+    // Description: Verify that mail can be send and received
+    func testReceiveMessage() {
+        mailboxRobot.waitForAppearance()
+        mailboxRobot.clickOnCompose()
+        composerRobot.waitForAppearance()
+        composerRobot.sendBlankEmail(composerRobot.userEmail, "Test_Message5")
+        sleep(60)
+        mailboxRobot.checkForMail("Test_Message5")
     }
 }

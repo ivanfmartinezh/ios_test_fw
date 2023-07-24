@@ -25,6 +25,7 @@ class MailboxViewRobot: BaseRobot {
     let mailboxComposeButtonID = "MailboxViewController.composeBarButtonItem"
     let undoBannerButtonID = "Undo"
     let searchButtonID = "MailboxViewController.searchBarButtonItem"
+    let mailID = ".titleLabel"
 
     override func waitForAppearance(timeout: TimeInterval = 30) {
         let mailboxConfirmationElement = app.tables[mailboxTableViewID]
@@ -59,5 +60,10 @@ class MailboxViewRobot: BaseRobot {
 
     func clickOnSearch() {
         button(searchButtonID).tap()
+    }
+
+    func checkForMail(_ mailSubject: String) {
+        let result = cell(mailSubject + mailID).exists
+        XCTAssert(result)
     }
 }
