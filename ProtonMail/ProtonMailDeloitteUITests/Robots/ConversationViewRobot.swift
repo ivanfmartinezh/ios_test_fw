@@ -31,13 +31,12 @@ class ConversationViewRobot: BaseRobot {
     }
 
     func checkActionInToolbar(_ action: String) {
-        let actionVisible = button(action).exists
+        let actionVisible = checkElementExists(button(action), timeout: 5)
         XCTAssert(actionVisible, "The action is not visible on screen")
     }
 
     func clickOnBackButton() {
-        let backButton = app.navigationBars.buttons["Inbox"] // Replace "Back" with the actual label of the Back button
-        backButton.tap()
+        clickOnNavigationButton("Inbox")
     }
 }
 

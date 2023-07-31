@@ -38,32 +38,24 @@ class MailboxViewRobot: BaseRobot {
     }
 
     func clickOnCompose() {
-        let composeButton = app.navigationBars.buttons[mailboxComposeButtonID] // Replace "Back" with the actual label of the Back button
-        composeButton.tap()
+        clickOnNavigationButton(mailboxComposeButtonID)
     }
 
     func clickOnMessageByIndex (_ index: Int) {
-        // Find the table view
-        let tableView = app.tables["MailboxViewController.tableView"]
-        // Find the cells within the table view
-        let cells = tableView.cells
-        // Find the cell at the desired index
-        let cellToTap = cells.element(boundBy: index)
-        // Tap on the cell
-        cellToTap.tap()
+        clickOnCellByIndex("MailboxViewController.tableView", index)
     }
 
     func checkForBanner() {
-        let result = button(undoBannerButtonID).exists
-        // XCTAssert(result, "Banner has not appear")
+        let result = checkElementExists(button(undoBannerButtonID), timeout: 5)
+        XCTAssert(result, "Banner has not appear")
     }
 
     func clickOnSearch() {
-        button(searchButtonID).tap()
+        clickOnButton(searchButtonID)
     }
 
     func checkForMail(_ mailSubject: String) {
-        let result = cell(mailSubject + mailID).exists
+        let result = checkElementExists(cell(mailSubject + mailID), timeout: 5)
         XCTAssert(result)
     }
 }

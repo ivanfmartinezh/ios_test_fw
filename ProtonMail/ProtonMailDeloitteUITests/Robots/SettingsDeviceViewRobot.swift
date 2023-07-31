@@ -70,8 +70,8 @@ class SettingsDeviceViewRobot: BaseRobot {
 
     func checkForLanguageExists() {
         for identifier in languagesIdentifiers {
-            let text = staticText(identifier)
-            //XCTAssertTrue(icon.exists, "Language \(identifier) does not exist.")
+            let text = checkElementExists(staticText(identifier), timeout: 5)
+            XCTAssertTrue(text, "Language \(identifier) does not exist.")
         }
     }
 

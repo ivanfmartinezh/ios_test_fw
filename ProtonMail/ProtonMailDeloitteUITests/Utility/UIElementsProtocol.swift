@@ -62,6 +62,12 @@ public extension UIElementsProtocol {
     func cell(_ identifier: String) -> XCUIElement {
         return app.cells[identifier]
     }
+
+    func navigationButton(_ identifier: String) -> XCUIElement {
+        return app.navigationBars.buttons[identifier] // Replace "Back" with the actual label of the Back button
+    }
+
+    func keyboardButton(_ identifier: String) -> XCUIElement {
+        return app.keyboards.buttons[identifier]
+    }
 }
-
-

@@ -71,8 +71,8 @@ class MenuViewRobot: BaseRobot {
 
     func checkForIconsExists() {
         for identifier in iconIdentifiers {
-            let icon = image(identifier)
-            XCTAssertTrue(icon.exists, "Icon \(identifier) does not exist.")
+            let icon = checkElementExists(image(identifier), timeout: 5)
+            XCTAssertTrue(icon, "Icon \(identifier) does not exist.")
         }
     }
 }

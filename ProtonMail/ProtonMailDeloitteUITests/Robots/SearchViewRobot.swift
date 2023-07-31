@@ -28,11 +28,11 @@ class SearchViewRobot: BaseRobot {
 
     func search(_ criteria: String) {
         writeOnTextField(searchTextFieldID, criteria)
-        app.keyboards.buttons["Search"].tap()
+        clickOnKeyboardButton("Search")
     }
 
     func checkMailAppear(_ criteria: String) {
-        let result = staticText(criteria).exists
+        let result = checkElementExists(staticText(criteria), timeout: 5)
         XCTAssert(result)
     }
 }

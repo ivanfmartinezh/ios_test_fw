@@ -39,7 +39,3 @@ class FolderEditViewRobot: BaseRobot {
     }
 
 }
-
-
-
-

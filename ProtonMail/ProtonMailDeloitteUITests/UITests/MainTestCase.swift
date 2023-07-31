@@ -24,4 +24,3 @@ open class MainTestCase: XCTestCase, UIElementsProtocol {
         app.launch()
     }
 }
-

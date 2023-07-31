@@ -1,19 +1,8 @@
-// Copyright (c) 2023 Proton Technologies AG
 //
-// This file is part of Proton Mail.
+// This file is part of Deloitte testing framework.
 //
-// Proton Mail is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Proton Mail is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Proton Mail. If not, see https://www.gnu.org/licenses/.
+// Class: BaseRobot
+// Description: Robot containing genric methods to perform action and make assertions on common UI elements
 
 import Foundation
 import XCTest
@@ -69,6 +58,21 @@ open class BaseRobot: UIElementsProtocol {
     }
 
     @discardableResult
+    func clickOnNavigationButton(_ id: String) -> Self {
+        navigationButton(id).tap()
+        return self
+    }
+
+    @discardableResult
+    func clickOnCellByIndex (_ id: String, _ index: Int) -> Self{
+        let tableView = table(id)
+        let cells = tableView.cells
+        let cellToTap = cells.element(boundBy: index)
+        cellToTap.tap()
+        return self
+    }
+    
+    @discardableResult
     func writeOnTextField(_ id: String, _ text: String) -> Self {
         textField(id).tap()
         textField(id).typeText(text)
@@ -79,6 +83,18 @@ open class BaseRobot: UIElementsProtocol {
     func writeOnSecureTextField(_ id: String, _ text: String) -> Self {
         secureTextField(id).tap()
         secureTextField(id).typeText(text)
+        return self
+    }
+
+    @discardableResult
+    func checkElementExists(_ element: XCUIElement, timeout: TimeInterval) -> Bool {
+        let elemenExists = element.waitForExistence(timeout: timeout)
+        return elemenExists
+    }
+
+    @discardableResult
+    func clickOnKeyboardButton(_ id: String) -> Self {
+        app.keyboards.buttons[id].tap()
         return self
     }
 }

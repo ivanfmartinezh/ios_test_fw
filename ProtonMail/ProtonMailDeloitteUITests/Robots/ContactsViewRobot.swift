@@ -41,6 +41,6 @@ class ContactsViewRobot: BaseRobot {
 
     func checkForContact(_ contactName: String) {
         let id = contactID + contactName
-        table(id).exists
+        let contactExists = checkElementExists(table(id), timeout: 5)
     }
 }
